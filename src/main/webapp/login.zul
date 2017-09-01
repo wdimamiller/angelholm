@@ -1,0 +1,24 @@
+<zk>
+	<window apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm')@init('org.angelholm.MyViewModel')"
+		validationMessages="@id('vmsgs')">
+
+		<html:form action="j_spring_security_check" method="POST"
+				   xmlns:html="native">
+			<grid>
+				<rows>
+					<row>User: <textbox id="u" name="j_username"/></row>
+					<row>Password: <textbox id="p" type="password" name="j_password"/></row>
+					<row spans="2">
+						<hbox>
+							<button type="reset" label="Reset" />
+							<button type="submit" label="Submit" />
+						</hbox>
+					</row>
+				</rows>
+			</grid>
+		</html:form>
+
+	</window>
+</zk>
+
