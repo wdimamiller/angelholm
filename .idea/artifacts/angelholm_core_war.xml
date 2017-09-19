@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="angelholm-core:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="angelholm-core.war">
+      <element id="artifact" artifact-name="angelholm-core:war exploded" />
+    </root>
+  </artifact>
+</component>

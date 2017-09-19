@@ -1,0 +1,24 @@
+<zk>
+    <window id="modalDialog" title="Login" border="normal" width="460px"
+            apply="org.zkoss.bind.BindComposer"
+            position="center,center" closable="true"
+            action="show: slideDown;hide: slideUp">
+        <vlayout>
+            <html:form action="j_spring_security_check" method="POST"
+                       xmlns:html="native">
+                <grid>
+                    <rows>
+                        <row>User: <textbox id="u" name="j_username"/></row>
+                        <row>Password: <textbox id="p" type="password" name="j_password"/></row>
+                        <row spans="2">
+                            <hbox>
+                                <button type="reset" label="Reset" />
+                                <button type="submit" label="Submit" />
+                            </hbox>
+                        </row>
+                    </rows>
+                </grid>
+            </html:form>
+        </vlayout>
+    </window>
+</zk>
