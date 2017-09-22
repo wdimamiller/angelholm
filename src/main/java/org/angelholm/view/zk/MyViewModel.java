@@ -1,7 +1,7 @@
 package org.angelholm.view.zk;
 
-import org.angelholm.model.User;
-import org.angelholm.service.UserService;
+//import org.angelholm.model.User;
+//import org.angelholm.service.UserService;
 
 import org.angelholm.service.MyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ public class MyViewModel {
 	private MyService myService;
 	private String answer;
 
-    @Autowired
-	private UserService userService;
+  //  @Autowired
+//	private UserService userService;
 
 	@Init
 	public void init() {
@@ -30,8 +30,8 @@ public class MyViewModel {
 	@NotifyChange("answer")
 	public void cmd() {
 
-	    User user = userService.getUser("admin") ;
-	    answer= user.getPassword();
+	    //User user = userService.getUser("admin") ;
+	    answer= "HELLO";
 	}
 
 	public String getAnswer() {

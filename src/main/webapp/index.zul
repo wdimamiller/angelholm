@@ -1,10 +1,11 @@
 <zk>
-	<window apply="org.zkoss.bind.BindComposer"
-		viewModel="@id('vm')@init('org.angelholm.MyViewModel')"
+	<!--<window apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm')@init('org.angelholm.view.zk.MyViewModel"
 		validationMessages="@id('vmsgs')">
 
 		<hlayout>today is <label value="@load(vm.answer)" /></hlayout>
-		<button label="ask" onClick="@command('cmd')"/>
+		-->
+		<button label="ask"/>
 
-	</window>
+
 </zk>
