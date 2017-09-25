@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
@@ -24,15 +25,17 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/pages/**").addResourceLocations("/pages/");
     }
 
+
     @Bean
     public UrlBasedViewResolver setupViewResolver() {
-        UrlBasedViewResolver resolver = new UrlBasedViewResolver();
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         //resolver.setPrefix("/pages/");
         resolver.setSuffix(".zul");
-        resolver.setViewClass(JstlView.class);
+      //  resolver.setViewClass(InternalResourceViewResolver.class);
 
         return resolver;
     }
+
     @Bean
     public UserDetailsService getUserDetailsService(){
         return new UserDetailsServiceImpl();

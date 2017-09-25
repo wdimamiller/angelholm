@@ -1,6 +1,0 @@
-<?link rel="stylesheet" type="text/css" href="/style.css"?>
-<?init class="org.zkoss.zk.ui.util.Composition"
-		arg0="/admin/admin_template.zul"?>
-<zk>
-	<include self="@define(content)" src="/admin/home.zul"/>
-</zk>

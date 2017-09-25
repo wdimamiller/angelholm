@@ -23,6 +23,14 @@ public class LoginController {
         return model;
     }
 
+    @RequestMapping(value = { "/admin"}, method = RequestMethod.GET)
+    public ModelAndView adminPage() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("admin");
+        return model;
+    }
+
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView loginPage(@RequestParam(value = "error",required = false) String error,
                                   @RequestParam(value = "logout",	required = false) String logout) {
@@ -33,7 +41,7 @@ public class LoginController {
         }
 
         if (logout != null) {
-            model.addObject("message", "Logged out from JournalDEV successfully.");
+            model.addObject("message", "Logged out  successfully.");
         }
 
         model.setViewName("login");
