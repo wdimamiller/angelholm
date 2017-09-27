@@ -1,11 +1,4 @@
 <zk>
-	<!--<window apply="org.zkoss.bind.BindComposer"
-		viewModel="@id('vm')@init('org.angelholm.view.zk.MyViewModel"
-		validationMessages="@id('vmsgs')">
-
-		<hlayout>today is <label value="@load(vm.answer)" /></hlayout>
-		-->
-		<button label="ask"/>
-
-
+	<label>"THIS IS HOME PAGE"</label>
+	<label>"ACCESS FOR ALL USERS"</label>
 </zk>

@@ -26,7 +26,7 @@ public class LoginController {
     @RequestMapping(value = { "/admin"}, method = RequestMethod.GET)
     public ModelAndView adminPage() {
         ModelAndView model = new ModelAndView();
-        model.setViewName("admin");
+        model.setViewName("/admin/admin");
         return model;
     }
 

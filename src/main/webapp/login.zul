@@ -1,6 +1,4 @@
 <zk>
-
-
 		<html:form action="j_spring_security_check" method="POST"
 				   xmlns:html="native">
 			<grid>
@@ -16,7 +14,5 @@
 				</rows>
 			</grid>
 		</html:form>
-
-
 </zk>
 
