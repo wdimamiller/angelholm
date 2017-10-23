@@ -1,18 +1,26 @@
 package org.angelholm.service.impl;
 
+import org.angelholm.dao.UserDaoImpl;
 import org.angelholm.model.User;
 import org.angelholm.service.UserService;
 import org.springframework.stereotype.Service;
+
+import java.sql.SQLException;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String login) {
-        User user = new User();
-        user.setLogin(login);
-        //хешуються sha1
-        user.setPassword("d033e22ae348aeb5660fc2140aec35850c4da997");
+
+        UserDaoImpl userDao = new UserDaoImpl();
+
+        User user = null;
+        try {
+            user = userDao.getUserByLogin(login);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         return user;
     }

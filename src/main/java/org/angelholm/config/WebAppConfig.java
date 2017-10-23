@@ -30,11 +30,12 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         resolver.setSuffix(".zul");
         return resolver;
     }
-
+/*
     @Bean
+
     public UserDetailsService getUserDetailsService(){
         return new UserDetailsServiceImpl();
-    }
+    }*/
 
 
 }

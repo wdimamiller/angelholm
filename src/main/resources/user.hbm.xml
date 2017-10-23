@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.angelholm.model.User" table="users">
+        <id name="id">
+            <column name="user_id" />
+            <generator class="assigned"></generator>
+        </id>
+
+        <property name="login">
+            <column name="user_login" />
+        </property>
+
+        <property name="password">
+            <column name="user_password"/>
+        </property>
+
+        <property name="enabled">
+            <column name="user_enabled"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>
