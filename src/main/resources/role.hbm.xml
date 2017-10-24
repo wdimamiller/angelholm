@@ -7,12 +7,21 @@
     <class name="org.angelholm.model.Role" table="roles">
         <id name="id">
             <column name="role_id" />
-            <generator class="assigned"></generator>
+            <generator class="native"></generator>
         </id>
 
         <property name="name">
             <column name="role_name" />
         </property>
+
+        <set name="users" table="user_roles" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="role_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="org.angelholm.model.User">
+                <column name="user_id" not-null="true" />
+            </many-to-many>
+        </set>
 
     </class>
 

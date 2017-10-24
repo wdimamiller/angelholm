@@ -7,7 +7,7 @@
     <class name="org.angelholm.model.User" table="users">
         <id name="id">
             <column name="user_id" />
-            <generator class="assigned"></generator>
+            <generator class="native"></generator>
         </id>
 
         <property name="login">
@@ -21,6 +21,16 @@
         <property name="enabled">
             <column name="user_enabled"/>
         </property>
+
+        <set name="roles" table="user_roles"
+             inverse="false" lazy="false" fetch="select" cascade="all" >
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="org.angelholm.model.Role">
+                <column name="role_id" not-null="true" />
+            </many-to-many>
+        </set>
 
     </class>
 

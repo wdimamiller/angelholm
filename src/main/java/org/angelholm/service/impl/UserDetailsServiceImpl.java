@@ -14,8 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
 
 @Service("UserDetailsServiceImpl")
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -27,10 +29,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String login)
             throws UsernameNotFoundException {
         User user = userService.getUser(login);
-        System.out.println("User : "+ user);
+        System.out.println("Користувач : "+ user);
         if(user==null){
-            System.out.println("User not found");
-            throw new UsernameNotFoundException("Username not found");
+            System.out.println("Користувача не знайдено");
+            throw new UsernameNotFoundException("Такого логіну не існує");
         }
         return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPassword(), user.getEnabled(), true, true, true, getGrantedAuthorities(user));
     }
@@ -47,15 +49,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
         System.out.print("authorities :"+authorities);
         */
-        RoleDaoImpl roleDao = new RoleDaoImpl();
-        List<Role> allRoles = null;
-        try {
-            allRoles = roleDao.getAllRoles();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        for (int i = 0; i < allRoles.size(); i++) {
-            Role role = allRoles.get(i);
+
+        Set<Role> roles = user.getRoles();
+
+       /* if(roles.isEmpty()){
+            System.out.println("Не знайдено ролей для цього користувача");
+        }*/
+        for(Role role : roles){
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 

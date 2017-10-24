@@ -1,16 +1,21 @@
 package org.angelholm.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Role {
 
     private int id;
     private String name;
+    private Set<User> users = new HashSet<User>(0);
 
     public Role() {
     }
 
-    public Role(int id, String name) {
+    public Role(int id, String name, Set<User> users) {
         this.id = id;
         this.name = name;
+        this.users = users;
     }
 
     public int getId() {
@@ -27,5 +32,13 @@ public class Role {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<User> getUsers(){
+        return this.users;
+    }
+
+    public void setUsers(Set<User> users){
+        this.users = users;
     }
 }

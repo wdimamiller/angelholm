@@ -1,5 +1,6 @@
 package org.angelholm.dao;
 
+import org.angelholm.model.Role;
 import org.angelholm.model.User;
 import org.angelholm.util.HibernateUtil;
 
@@ -9,7 +10,9 @@ import org.hibernate.criterion.Restrictions;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class UserDaoImpl implements UserDao {
 
@@ -101,6 +104,7 @@ public class UserDaoImpl implements UserDao {
         }
         return users;
     }
+
 
     public void deleteUser(User user) throws SQLException {
         Session session = null;
