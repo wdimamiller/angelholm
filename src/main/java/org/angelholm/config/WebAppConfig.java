@@ -1,16 +1,15 @@
 package org.angelholm.config;
 
-import org.angelholm.service.impl.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
+
 
 @Configuration
 @EnableWebMvc
@@ -19,7 +18,12 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/pages/**").addResourceLocations("/pages/");
+        registry.addResourceHandler("/scripts/**").addResourceLocations("/WEB-INF/scripts/");
+        registry.addResourceHandler("/styles/**").addResourceLocations("/WEB-INF/styles/");
+        registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/images/");
+        registry.addResourceHandler("/fonts/**").addResourceLocations("/WEB-INF/fonts/");
+        registry.addResourceHandler("/i18n/**").addResourceLocations("/WEB-INF/i18n/");
+
     }
 
 
@@ -30,12 +34,8 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         resolver.setSuffix(".zul");
         return resolver;
     }
-/*
-    @Bean
 
-    public UserDetailsService getUserDetailsService(){
-        return new UserDetailsServiceImpl();
-    }*/
+
 
 
 }

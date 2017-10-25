@@ -1,4 +1,16 @@
 <zk>
-	<label>"THIS IS HOME PAGE"</label>
-	<label>"ACCESS FOR ALL USERS"</label>
+
+	<borderlayout  hflex="1">
+		<north height="100px" border="none" >
+			<label id="labelWelcome">${labels.index.labelWelcome}</label>
+		</north>
+		<center id="mainContent" autoscroll="true" >
+			<hbox align="center" id="hboxImgLogoWelcome">
+				<image id="imageLogoWelcome" src="images/logo_welcome.png"/>
+			</hbox>
+		</center>
+		<south height="50px" border="none">
+            <label id="labelCopyright"> ${labels.index.labelCopyright}</label>
+		</south>
+	</borderlayout>
 </zk>

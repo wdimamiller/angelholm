@@ -13,8 +13,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.SQLException;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
@@ -41,24 +39,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private List<GrantedAuthority> getGrantedAuthorities(User user){
 
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-
-        /*
-        for(UserProfile userProfile : user.getUserProfiles()){
-            System.out.println("UserProfile : "+userProfile);
-            authorities.add(new SimpleGrantedAuthority("ROLE_"+userProfile.getType()));
-        }
-        System.out.print("authorities :"+authorities);
-        */
-
         Set<Role> roles = user.getRoles();
 
-       /* if(roles.isEmpty()){
-            System.out.println("Не знайдено ролей для цього користувача");
-        }*/
         for(Role role : roles){
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
-
 
         return authorities;
     }
