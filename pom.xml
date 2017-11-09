@@ -7,7 +7,8 @@
 	<version>1.0</version>
 
 	<properties>
-		<zk.version>8.0.2.2-Eval</zk.version>
+		<!--<zk.version>8.0.2.2</zk.version>-->
+        <zk.version>7.0.0</zk.version>
 		<spring.version>4.3.10.RELEASE</spring.version>
         <spring.securiry>4.2.3.RELEASE</spring.securiry>
 		<hibernate-version>5.2.10.Final</hibernate-version>
@@ -64,18 +65,34 @@
 
         <!--ZK dependencies -->
 		<dependency>
+			<groupId>org.zkoss.theme</groupId>
+			<artifactId>atlantic</artifactId>
+			<version>8.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.zkoss.theme</groupId>
+			<artifactId>breeze</artifactId>
+			<version>8.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.zkoss.theme</groupId>
+			<artifactId>sapphire</artifactId>
+			<version>${zk.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.zkoss.theme</groupId>
+			<artifactId>silvertail</artifactId>
+			<version>${zk.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zkbind</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zkmax</artifactId>
-			<version>${zk.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zuti</artifactId>
+			<artifactId>zul</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
 		<dependency>
@@ -93,6 +110,13 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io}</version>
+		</dependency>
+
+		<!--Bootstrap dependencies-->
+		<dependency>
+			<groupId>org.zkoss.addons</groupId>
+			<artifactId>zk-bootstrap</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 		<!--Liquibase dependencies-->
@@ -128,7 +152,6 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate-version}</version>
 		</dependency>
-
 		<!-- optional -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -244,6 +267,7 @@
                 </configuration>
             </plugin>
 
+
             <!-- Compile java -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -267,30 +291,43 @@
 			</plugin>
 
 
+            <!-- Run with Jetty -->
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>7.6.8.v20121106</version>
+                <configuration>
+                    <webAppConfig>
+                        <contextPath>/${project.artifactId}</contextPath>
+                        <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
+                    </webAppConfig>
+                    <scanIntervalSeconds>5</scanIntervalSeconds>
+                </configuration>
+            </plugin>
 
-			<!-- Pack zips -->
-			<!--
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.2</version>
-				<executions>
-					<execution>
-						<id>webapp</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<finalName>angelholm-core${packname}</finalName>
-							<appendAssemblyId>false</appendAssemblyId>
-							<descriptors>
-								<descriptor>src/main/assembly/webapp.xml</descriptor>
-							</descriptors>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			-->
+
+            <!-- Pack zips -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <id>webapp</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>angel${packname}</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <descriptors>
+                                <descriptor>src/main/assembly/webapp.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
 
         </plugins>
 	</build>

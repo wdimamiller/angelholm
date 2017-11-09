@@ -1,16 +1,420 @@
 <zk>
+	<button sclass="" onClick='org.zkoss.lang.Library.setProperty("org.zkoss.theme.preferred", "atlantic");
+Executions.sendRedirect("");'>ATLANTIC</button>
+	<button sclass="" onClick='org.zkoss.lang.Library.setProperty("org.zkoss.theme.preferred", "sapphire");
+Executions.sendRedirect("");'>SAPPHIRE</button>
+	<button sclass="" onClick='org.zkoss.lang.Library.setProperty("org.zkoss.theme.preferred", "breeze");
+Executions.sendRedirect("");'>BREEZE</button>
+	<button sclass="" onClick='org.zkoss.lang.Library.setProperty("org.zkoss.theme.preferred", "silvertail");
+Executions.sendRedirect("");'>SILVERTAIL</button>
+	<button sclass="" onClick='org.zkoss.lang.Library.setProperty("org.zkoss.theme.preferred", "custom");
+Executions.sendRedirect("");'>Cjnn</button>
+	<button sclass="" onClick='org.zkoss.lang.Library.setProperty("org.zkoss.theme.preferred", "cyborg");
+Executions.sendRedirect("");'>fvffv</button>
+	<button sclass="" onClick='org.zkoss.lang.Library.setProperty("org.zkoss.theme.preferred", "amelia");
+Executions.sendRedirect("");'>amelia</button>
+	<div >
+		<grid>
+			<auxhead>
+				<auxheader colspan="4" label="Contributor of ZK International Message(Part)" />
+			</auxhead>
+			<columns>
+				<column hflex="5">Language</column>
+				<column hflex="6">Contributor</column>
+				<column hflex="3">Charset</column>
+				<column hflex="4">Comment</column>
+			</columns>
+			<rows sclass="narrow">
+				<row>
+					<label value="Arabic (ar)" />
+					<label value="Ayman Elgharabawy" />
+					<label value="iso-8859-6" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Hungarian (hu)" />
+					<label value="Andreas Klein" />
+					<label value="iso-8859-2" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Italian (it)" />
+					<label value="Matteo Barbieri" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Indonesian (id)" />
+					<label value="James Liam Supangkat" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Japanese (ja)" />
+					<label value="Poli Lee" />
+					<label value=" iso-2022-jp" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Korean (ko)" />
+					<label value="Deok-su Lee" />
+					<label value="euc-kr" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Dutch (nl)" />
+					<label value="Wido Jansen" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Portuguese (pt)" />
+					<label value="Airton Carrara" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Brazilian Portugese (pt_BR)" />
+					<label value="Airton Carrara" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Romanian (ro)" />
+					<label value="Calin Vaida" />
+					<label value="iso-8859-2" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Russian (ru)" />
+					<label value="Denis Yarkovoy" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="French (fr)" />
+					<label value="Jêrôme Vergereau" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Spanish (es)" />
+					<label value="Daniel Octavio Ruiz Rodriguez" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="German (de)" />
+					<label value="H.-Dirk Schmitt" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Czech (cs)" />
+					<label value="Pavel Mica" />
+					<label value="iso-8859-2" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Catalan (ca)" />
+					<label value="Xavier Covas O'Ryan" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Bulgarian (bg)" />
+					<label value="Boril Yonchev" />
+					<label value="iso-8859-5" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Ukrainian (uk)" />
+					<label value="Denis Yarkovoy" />
+					<label value="iso-8859-5" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Turkish (tr)" />
+					<label value="Kursat Kurt" />
+					<label value="iso-8859-9" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Swedish (sv)" />
+					<label value="Easit AB" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Slovenian (sl)" />
+					<label value="Ziga" />
+					<label value="iso-8859-2" />
+					<textbox />
+				</row>
+			</rows>
+		</grid>
+	</div>>
+</zk><!--
+<?page title="ZK Theme with Bootstrap 3"?>
+<?link rel="stylesheet" type="text/css"	href="/bootstrap/v3/bootstrap/themes/bootstrap-${param.theme}.min.css" if="${not empty param.theme}"?>
+<?link rel="stylesheet" type="text/css"	href="/bootstrap/v3/bootstrap/themes/bootstrap-default.min.css" if="${empty param.theme}"?>
 
-	<borderlayout  hflex="1">
-		<north height="100px" border="none" >
-			<label id="labelWelcome">${labels.index.labelWelcome}</label>
-		</north>
-		<center id="mainContent" autoscroll="true" >
-			<hbox align="center" id="hboxImgLogoWelcome">
-				<image id="imageLogoWelcome" src="images/logo_welcome.png"/>
-			</hbox>
-		</center>
-		<south height="50px" border="none">
-            <label id="labelCopyright"> ${labels.index.labelCopyright}</label>
-		</south>
-	</borderlayout>
-</zk>
+<?link rel="stylesheet" type="text/css"	href="/bootstrap/v3/assets/css/docs.css" ?>
+<?link rel="stylesheet" type="text/css"	href="/bootstrap/v3/assets/css/pygments-manni.css" ?>
+
+
+<zk xmlns:w="client" xmlns:n="native">
+
+	<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+		<div class="container">
+			<a href="" class="navbar-brand">ZK 7 with Bootstrap 3</a>
+			<navbar zclass="none" sclass="navbar-collapse">
+				<navitem label="Getting started" onClick='Clients.showNotification("Not implemented yet")'/>
+				<navitem label="CSS" onClick='Clients.showNotification("Not implemented yet")'/>
+				<navitem label="Components" selected="true"/>
+				<navitem label="JavaScript" onClick='Clients.showNotification("Not implemented yet")'/>
+				<navitem label="Customize" onClick='Clients.showNotification("Not implemented yet")'/>
+				<nav label="Themes">
+					<navitem label="Default" onClick='Executions.sendRedirect("?theme=default")'/>
+					<navitem label="Amelia" onClick='Executions.sendRedirect("?theme=amelia")'/>
+					<navitem label="Cerulean" onClick='Executions.sendRedirect("?theme=cerulean")'/>
+					<navitem label="Cosmo" onClick='Executions.sendRedirect("?theme=cosmo")'/>
+					&lt;!&ndash; <navitem label="Cyborg" onClick='Executions.sendRedirect("?theme=cyborg")'/> &ndash;&gt;
+					<navitem label="Flatly" onClick='Executions.sendRedirect("?theme=flatly")'/>
+					<navitem label="Journal" onClick='Executions.sendRedirect("?theme=journal")'/>
+					<navitem label="Readable" onClick='Executions.sendRedirect("?theme=readable")'/>
+					<navitem label="Simplex" onClick='Executions.sendRedirect("?theme=simplex")'/>
+					<navitem label="Slate" onClick='Executions.sendRedirect("?theme=slate")'/>
+					<navitem label="Spacelab" onClick='Executions.sendRedirect("?theme=spacelab")'/>
+					<navitem label="United" onClick='Executions.sendRedirect("?theme=united")'/>
+				</nav>
+			</navbar>
+		</div>
+	</div>
+
+	<div sclass="container bs-docs-container">
+		<grid>
+			<auxhead>
+				<auxheader colspan="4" label="Contributor of ZK International Message(Part)" />
+			</auxhead>
+			<columns>
+				<column hflex="5">Language</column>
+				<column hflex="6">Contributor</column>
+				<column hflex="3">Charset</column>
+				<column hflex="4">Comment</column>
+			</columns>
+			<rows sclass="narrow">
+				<row>
+					<label value="Arabic (ar)" />
+					<label value="Ayman Elgharabawy" />
+					<label value="iso-8859-6" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Hungarian (hu)" />
+					<label value="Andreas Klein" />
+					<label value="iso-8859-2" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Italian (it)" />
+					<label value="Matteo Barbieri" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Indonesian (id)" />
+					<label value="James Liam Supangkat" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Japanese (ja)" />
+					<label value="Poli Lee" />
+					<label value=" iso-2022-jp" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Korean (ko)" />
+					<label value="Deok-su Lee" />
+					<label value="euc-kr" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Dutch (nl)" />
+					<label value="Wido Jansen" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Portuguese (pt)" />
+					<label value="Airton Carrara" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Brazilian Portugese (pt_BR)" />
+					<label value="Airton Carrara" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Romanian (ro)" />
+					<label value="Calin Vaida" />
+					<label value="iso-8859-2" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Russian (ru)" />
+					<label value="Denis Yarkovoy" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="French (fr)" />
+					<label value="Jêrôme Vergereau" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Spanish (es)" />
+					<label value="Daniel Octavio Ruiz Rodriguez" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="German (de)" />
+					<label value="H.-Dirk Schmitt" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Czech (cs)" />
+					<label value="Pavel Mica" />
+					<label value="iso-8859-2" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Catalan (ca)" />
+					<label value="Xavier Covas O'Ryan" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Bulgarian (bg)" />
+					<label value="Boril Yonchev" />
+					<label value="iso-8859-5" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Ukrainian (uk)" />
+					<label value="Denis Yarkovoy" />
+					<label value="iso-8859-5" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Turkish (tr)" />
+					<label value="Kursat Kurt" />
+					<label value="iso-8859-9" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Swedish (sv)" />
+					<label value="Easit AB" />
+					<label value="iso-8859-1" />
+					<textbox />
+				</row>
+				<row>
+					<label value="Slovenian (sl)" />
+					<label value="Ziga" />
+					<label value="iso-8859-2" />
+					<textbox />
+				</row>
+			</rows>
+		</grid>
+	</div>>
+
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-3">
+				&lt;!&ndash;<div class="bs-sidebar hidden-print affix">
+                    <include src="zk/sidebar.zul"/>
+                </div>&ndash;&gt;
+			</div>
+			<div class="col-md-9">
+
+
+
+				<div class="bs-docs-section">
+					<div class="page-header">
+						<n:h1 id="jumbotron">Jumbotron</n:h1>
+					</div>
+					<n:p><![CDATA[A lightweight, flexible component that can optional extend the entire viewport to showcase key content on your site. To make the jumbotron full width, don't include it within a <code>.container</code>. Placing it within a container will keep it at the width of the rest of your content and provide rounded corners.]]></n:p>
+					<div class="bs-example">
+						<div class="jumbotron">
+							<div class="container">
+								<n:h1>Hello, world!</n:h1>
+								<n:p>
+									This is a simple hero unit, a simple
+									jumbotron-style component for
+									calling extra attention to featured
+									content or information.
+								</n:p>
+								<n:p>
+									<a class="btn btn-primary btn-lg">
+										Learn more
+									</a>
+								</n:p>
+							</div>
+						</div>
+					</div>
+
+					<div class="highlight">
+						<n:pre style="white-space:pre;"><![CDATA[<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>div</span> class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>container</span><span style='color:#2a00ff; '>"</span> xmlns:n=<span style='color:#2a00ff; '>"</span><span style='color:#3f3fbf; '>native</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '>></span>
+	<span style='color:#7f0055; '>&lt;</span>n:<span style='color:#7f0055; '>h1</span><span style='color:#7f0055; '>></span>Hello, world!<span style='color:#7f0055; '>&lt;/</span>n:<span style='color:#7f0055; '>h1</span><span style='color:#7f0055; '>></span>
+	<span style='color:#7f0055; '>&lt;</span>n:<span style='color:#7f0055; '>p</span><span style='color:#7f0055; '>></span>
+		This is a simple hero unit, a simple
+		jumbotron-style component for
+		calling extra attention to featured
+		content or information.
+	<span style='color:#7f0055; '>&lt;/</span>n:<span style='color:#7f0055; '>p</span><span style='color:#7f0055; '>></span>
+	<span style='color:#7f0055; '>&lt;</span>n:<span style='color:#7f0055; '>p</span><span style='color:#7f0055; '>></span>
+		<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>a</span> class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>btn btn-primary btn-lg</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '>></span>
+			Learn more
+		<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; '>a</span><span style='color:#7f0055; '>></span>
+	<span style='color:#7f0055; '>&lt;/</span>n:<span style='color:#7f0055; '>p</span><span style='color:#7f0055; '>></span>
+<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; '>div</span><span style='color:#7f0055; '>></span>]]></n:pre>
+					</div>
+				</div>
+
+				<div class="bs-docs-section">
+					<div class="page-header">
+						<n:h1 id="page-header">Page header</n:h1>
+					</div>
+					<n:p><![CDATA[A simple shell for an <code>h1</code> to appropriately space out and segment sections of content on a page. It can utilize the <code>h1</code>'s default <code>small</code> element, as well as most other components (with additional styles).]]></n:p>
+					<div class="bs-example">
+						<div class="page-header">
+							<html>
+								<![CDATA[<h1>Example page header <small>Subtext for header</small></h1>]]>
+							</html>
+						</div>
+					</div>
+
+					<div class="highlight">
+						<n:pre style="white-space:pre;"><![CDATA[<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>div</span> class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>page-header</span><span style='color:#2a00ff; '>"</span><span style='color:#7f0055; '>></span>
+	<span style='color:#7f0055; '>&lt;</span><span style='color:#7f0055; '>html</span><span style='color:#7f0055; '>></span>
+		<span style='color:#3f7f59; '>&lt;![CDATA[</span>&lt;h1>Example page header &lt;small>Subtext for header&lt;/small>&lt;/h1><span style='color:#3f7f59; '>]]&gt;</span>
+	<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; '>html</span><span style='color:#7f0055; '>></span>
+<span style='color:#7f0055; '>&lt;/</span><span style='color:#7f0055; '>div</span><span style='color:#7f0055; '>></span>]]></n:pre>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+</zk>-->

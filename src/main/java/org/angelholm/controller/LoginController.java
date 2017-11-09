@@ -20,8 +20,7 @@ public class LoginController {
     public ModelAndView homePage() {
         ModelAndView model = new ModelAndView();
         model.setViewName("index");
-        return model;
-    }
+        return model;    }
 
     @RequestMapping(value = { "/admin"}, method = RequestMethod.GET)
     public ModelAndView adminPage() {
