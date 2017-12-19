@@ -1,18 +1,29 @@
 <zk>
-		<html:form action="j_spring_security_check" method="POST"
-				   xmlns:html="native">
-			<grid>
-				<rows>
-					<row>User: <textbox id="u" name="j_username"/></row>
-					<row>Password: <textbox id="p" type="password" name="j_password"/></row>
-					<row spans="2">
-						<hbox>
-							<button type="reset" label="Reset" />
-							<button type="submit" label="Submit" />
-						</hbox>
-					</row>
-				</rows>
-			</grid>
-		</html:form>
+
+    <window id="windowLogin"
+            border="normal"
+            closable="true"
+            mode="popup"
+            width="400px"
+            height="200px"
+            position="center,top"
+            title="${labels.login.windowTitle}">
+        <html:form action="j_spring_security_check" method="POST"
+                   xmlns:html="native">
+            <grid>
+                <rows>
+                    <row>${labels.login.labelUsername}<textbox id="txtUsername" name="j_username"/></row>
+                    <row>${labels.login.labelPassword} <textbox id="txtPassword" type="password" name="j_password"/></row>
+                    <row spans="2">
+                        <hbox>
+                            <button type="reset" label="${labels.login.buttonReset}" />
+                            <button type="submit" label="${labels.login.buttonSubmit}" />
+                        </hbox>
+                    </row>
+                </rows>
+            </grid>
+        </html:form>
+    </window>
+
 </zk>
 

@@ -2,43 +2,65 @@
 
 <zk>
 
+
 	<preference>
 		<name>org.zkoss.zk.ui.WebApp.name</name>
 		<value>ANGELHOLM</value>
 	</preference>
 
+	<!--
+	<language-config>
+		<addon-uri>/ZKAddon.xml</addon-uri>
+	</language-config>
+	-->
+	<!--
+	<desktop-config>
+		<theme-provider-class>org.angelholm.zkoss.MyThemeProvider
+		</theme-provider-class>
+	</desktop-config>
+	-->
+
+	<!-- ====================================================== -->
+	<!-- Listener to make sure servlet thread -->
+	<!-- and ZK event thread got the same -->
+	<!-- ThreadLocal values. -->
+	<!-- ====================================================== -->
+	<listener>
+		<description>ThreadLocal Synchronization Listener
+		</description>
+		<listener-class>org.zkoss.zkplus.util.ThreadLocalListener
+		</listener-class>
+	</listener>
+
+	<!-- ====================================================== -->
+	<!-- Besides that, you have to specify what -->
+	<!-- ThreadLocal variables you want to sync. -->
+	<!-- 1. Spring RequestContextHolder -->
+	<!-- 2. Spring ThreadLocalSecurityContextHolderStrategy -->
+	<!-- ====================================================== -->
+	<preference>
+		<name>ThreadLocal</name>
+		<value>
+			org.springframework.security.core.context.ThreadLocalSecurityContextHolderStrategy=contextHolder;
+			org.springframework.web.context.request.RequestContextHolder=requestAttributesHolder,inheritableRequestAttributesHolder;
+		</value>
+	</preference>
+
+	<system-config>
+		<ui-factory-class>
+			org.zkoss.zk.ui.http.SerializableUiFactory
+		</ui-factory-class>
+	</system-config>
+
 	<library-property>
 		<name>org.zkoss.theme.preferred</name>
-		<value>sapphire</value>
+		<value>atlantic</value>
 	</library-property>
 
-<!--
-	&lt;!&ndash;For bootstrap &ndash;&gt;
-	<library-property>
-		<name>org.zkoss.zul.Button.mold</name>
-		<value>bs</value>
-	</library-property>
-	<library-property>
-		<name>org.zkoss.zul.Menupopup.mold</name>
-		<value>bs</value>
-	</library-property>
-	<library-property>
-		<name>org.zkoss.zkmax.zul.Navbar.mold</name>
-		<value>bs</value>
-	</library-property>
-	<library-property>
-		<name>org.zkoss.zul.Paging.mold</name>
-		<value>bs</value>
-	</library-property>
-	<library-property>
-		<name>org.zkoss.zul.Panel</name>
-		<value>bs</value>
-	</library-property>
-
-    <library-property>
-        <name>org.zkoss.zul.Grid</name>
-        <value>bs</value>
-    </library-property>-->
+	<session-config>
+		<max-desktops-per-session>10</max-desktops-per-session>
+		<timer-keep-alive>true</timer-keep-alive>
+	</session-config>
 
 	
 </zk>

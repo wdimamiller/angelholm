@@ -1,0 +1,21 @@
+<zk>
+    <window id="windowPdfBrowser"
+            apply="org.angelholm.composer.PdfWindowComposer"
+            border="normal"
+            closable="true"
+            mode="popup"
+            maximizable="true"
+            width="80%"
+            height="90%"
+            sizable="true"
+            position="center"
+    title="sdsdv">
+
+        <iframe id="iframePdfContent"
+                width="100%"
+                height="100%"
+                style="border: 1px solid gray; align:center"
+                src="http://dicom.nema.org/medical/dicom/current/output/pdf/part01.pdf"/>
+
+    </window>
+</zk>

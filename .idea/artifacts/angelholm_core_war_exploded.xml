@@ -9,20 +9,22 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.zkoss.theme:atlantic:8.5.0" />
           <element id="library" level="project" name="Maven: org.zkoss.theme:breeze:8.5.0" />
-          <element id="library" level="project" name="Maven: org.zkoss.theme:sapphire:7.0.0" />
-          <element id="library" level="project" name="Maven: org.zkoss.theme:silvertail:7.0.0" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zkbind:7.0.0" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zul:7.0.0" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zk:7.0.0" />
-          <element id="library" level="project" name="Maven: org.zkoss.common:zweb:7.0.0" />
-          <element id="library" level="project" name="Maven: org.zkoss.common:zcommon:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.theme:sapphire:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.zkoss.theme:silvertail:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zkbind:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.18.2-GA" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zul:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zk:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zweb:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zcommon:8.0.2.2" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.2.2" />
-          <element id="library" level="project" name="Maven: org.zkoss.common:zel:7.0.0" />
-          <element id="library" level="project" name="Maven: org.beanshell:bsh:2.0b4" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zel:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.apache-extras.beanshell:bsh:2.0b6" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-jdk14:1.7.5" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.8" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zkplus:7.0.0" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zhtml:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zkplus:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zhtml:8.0.2.2" />
+          <element id="library" level="project" name="Maven: org.zkoss:zsoup:1.8.2.5" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
           <element id="library" level="project" name="Maven: org.zkoss.addons:zk-bootstrap:1.0.0" />
           <element id="library" level="project" name="Maven: org.zkoss.zk:zkex:7.0.0" />
@@ -65,7 +67,6 @@
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.2.10.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
-          <element id="library" level="project" name="Maven: org.javassist:javassist:3.20.0-GA" />
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.1.Final" />
           <element id="library" level="project" name="Maven: org.jboss:jandex:2.0.3.Final" />
@@ -98,12 +99,12 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.10.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.3.RELEASE" />
