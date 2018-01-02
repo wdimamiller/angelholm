@@ -1,22 +1,29 @@
-<zk xmlns:x="xhtml" xmlns:w="client" xmlns:ca="client/attribute">
-
+<zk >
     <style src="/resources/styles/index.css"/>
     <script src="/resources/scripts/index.js"></script>
 
 
-
-            <div sclass="div-header">
-                <label>${labels.index.labelWelcome}</label>
-                <button id="btnLogin" sclass="btn-radius btn-right">${labels.index.buttonLogin}</button>
-                <button id="btnManual" sclass="btn-radius btn-right">${labels.index.buttonManual}</button>
+    <div sclass="div-wrapper" apply="org.angelholm.composer.IndexComposer">
+            <div  sclass="div-header">
+                <div sclass="div-label-welcome">
+                    <label>${labels.index.labelWelcome}</label>
+                </div>
+                <div sclass="div-btn-group">
+                    <button id="btnLogin" sclass="btn-radius btn-right">${labels.index.buttonLogin}</button>
+                    <button id="btnManual" sclass="btn-radius btn-right">${labels.index.buttonManual}</button>
+                </div>
             </div>
 
-            <div apply="org.angelholm.composer.IndexComposer">
+            <div sclass="div-center">
 
             </div>
 
+            <div sclass="div-footer">
+                <label>${labels.index.labelCopyright}</label>
+            </div>
+    </div>
 
-            <label>${labels.index.labelCopyright}</label>
+
 
 
 </zk>

@@ -1,0 +1,14 @@
+.cell{
+    font-weight: bold;
+    padding: 3px;
+    vertical-align: middle;
+}
+.btn-radius{
+    border-radius: 5px;
+}
+.textarea{
+    border-radius: 5px;
+    width: 200px;
+}
+
+

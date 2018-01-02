@@ -1,39 +1,27 @@
 .btn-radius{
     border-radius: 5px;
 }
-.btn-right{
-    /*position: absolute;
-   /* right: 10px;*/
-   /* top: 5px;*/
-}
-.gallery {
-    margin: 30px 80px;
-}
+.div-wrapper{
 
-.imageDiv {
-    display: inline-block;
-    position: relative;
-    width: 125px;
-    height: 75px;
-    margin: 30px 30px 0 0;
-    border: 3px solid #DDDDDD;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10px;
+
 }
-.div-header{
-    height: 100%;
-    float: right;
-    margin: 5px;
-    padding: 5px;
+.dib-header{
+
+    background-color: darkslategrey;
+    width: 100%;
+    margin: 50px;
+    padding: 50px;
 }
-.the-slider {
-    width: 420px;
-    height: 310px;
-    overflow: hidden;
+.div-label-welcome{
+
+    float:left;
+    text-align: left;
+
 }
-.the-slider div {
-    width: 1500px;
-}
-.the-slider div img {
-    margin: 5px 10px;
-    width: 400px;
-    height: 300px;
+.div-btn-group{
+
+    text-align: right;
 }

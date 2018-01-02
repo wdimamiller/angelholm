@@ -1,27 +1,42 @@
 <zk>
-
     <window id="windowLogin"
             border="normal"
             closable="true"
             mode="popup"
-            width="400px"
+            width="350px"
             height="200px"
             position="center,top"
             title="${labels.login.windowTitle}">
+
+        <style src="/resources/styles/login.css"/>
+
         <html:form action="j_spring_security_check" method="POST"
                    xmlns:html="native">
-            <grid>
-                <rows>
-                    <row>${labels.login.labelUsername}<textbox id="txtUsername" name="j_username"/></row>
-                    <row>${labels.login.labelPassword} <textbox id="txtPassword" type="password" name="j_password"/></row>
-                    <row spans="2">
-                        <hbox>
-                            <button type="reset" label="${labels.login.buttonReset}" />
-                            <button type="submit" label="${labels.login.buttonSubmit}" />
-                        </hbox>
-                    </row>
-                </rows>
-            </grid>
+
+            <div align="center" width="100%">
+            <tablelayout columns="2" >
+                <tablechildren sclass="cell" >
+                    <label >${labels.login.labelUsername}</label>
+                </tablechildren>
+                <tablechildren sclass="cell">
+                    <textbox  id="txtUsername" name="j_username" sclass="textarea"/>
+                </tablechildren>
+                <tablechildren sclass="cell" >
+                    <label>${labels.login.labelPassword}</label>
+                </tablechildren>
+                <tablechildren sclass="cell">
+                    <textbox id="txtPassword" type="password" name="j_password" sclass="textarea"/>
+                </tablechildren>
+                <tablechildren colspan="2" sclass="cell">
+                    <separator height="10px"></separator>
+                    <div align="center" >
+                        <button type="submit" label="${labels.login.buttonSubmit}" sclass="btn-radius"/>
+                        <button type="reset" label="${labels.login.buttonReset}" sclass="btn-radius"/>
+                    </div>
+                </tablechildren>
+            </tablelayout>
+            </div>
+
         </html:form>
     </window>
 

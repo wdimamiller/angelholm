@@ -37,7 +37,6 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-
 	<listener>
 		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
 	</listener>
@@ -76,9 +75,6 @@
 		<servlet-name>zkLoader</servlet-name>
 		<url-pattern>*.zul</url-pattern>
 	</servlet-mapping>
-
-
-
 
 	<servlet-mapping>
 		<servlet-name>zkLoader</servlet-name>

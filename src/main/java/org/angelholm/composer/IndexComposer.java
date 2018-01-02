@@ -1,23 +1,19 @@
 package org.angelholm.composer;
 
+import org.zkoss.bind.annotation.AfterCompose;
 import org.zkoss.util.resource.Labels;
+import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
-import org.zkoss.zul.*;
+import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
+import org.zkoss.zul.Button;
+import org.zkoss.zul.Window;
 import org.zkoss.util.media.AMedia;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-
-
-import java.util.*;
-
-
-import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.Executions;
-
-import javax.servlet.ServletContext;
-
+import java.util.HashMap;
 
 public class IndexComposer extends SelectorComposer {
 
@@ -27,7 +23,8 @@ public class IndexComposer extends SelectorComposer {
     @Listen("onClick=#btnManual")
     public void openPdfWindow(){
 
-        File f = new File("\\C:\\Users\\Admin\\Desktop\\WORK\\angelholm\\src\\main\\webapp\\resources\\pdf\\dicom.pdf");
+        File f = new File( Sessions.getCurrent().getWebApp().getServletContext().getRealPath("/") + "/resources/pdf/manual.pdf");
+
         AMedia fileContent = null;
         try {
             fileContent = new AMedia(f, null, null);
@@ -49,6 +46,7 @@ public class IndexComposer extends SelectorComposer {
         window.doModal();
     }
 
+    @AfterCompose
     public void doAfterCompose (Component comp) throws Exception {
         super.doAfterCompose(comp);
     }
