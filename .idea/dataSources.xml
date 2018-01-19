@@ -12,5 +12,13 @@
         <property name="ApplicationName" value="DataGrip" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="noname-applicationContext.xml@587/Hibernate" uuid="dd209482-e415-4e58-b204-fef1818a0f17">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/a</jdbc-url>
+    </data-source>
   </component>
 </project>

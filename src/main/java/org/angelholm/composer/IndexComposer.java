@@ -1,5 +1,6 @@
 package org.angelholm.composer;
 
+import org.angelholm.service.TestService;
 import org.zkoss.bind.annotation.AfterCompose;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Sessions;
@@ -20,6 +21,14 @@ public class IndexComposer extends SelectorComposer {
     Button btnLogin;
     Button btnManual;
 
+    @Listen("onClick=#btnTest")
+    public void test(){
+
+        TestService test = new TestService();
+
+        test.test();
+
+    }
     @Listen("onClick=#btnManual")
     public void openPdfWindow(){
 

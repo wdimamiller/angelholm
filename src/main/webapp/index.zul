@@ -9,6 +9,7 @@
                     <label>${labels.index.labelWelcome}</label>
                 </div>
                 <div sclass="div-btn-group">
+                    <button id="btnTest" sclass="btn-radius btn-right">Test</button>
                     <button id="btnLogin" sclass="btn-radius btn-right">${labels.index.buttonLogin}</button>
                     <button id="btnManual" sclass="btn-radius btn-right">${labels.index.buttonManual}</button>
                 </div>

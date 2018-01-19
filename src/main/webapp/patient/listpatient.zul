@@ -1,0 +1,90 @@
+<zk >
+
+    <style src="/resources/styles/listpatient.css"/>
+
+    <div id="listPatientContent" width="100%" align="center">
+
+        <div id="editPanel" style="padding : 20px;" width="80%">
+            <groupbox>
+                <caption>${labels.listPatient.groupBoxEditTitle}</caption>
+                <tablelayout columns="7" >
+                    <tablechildren sclass="cell" >
+                        <label >${labels.listPatient.gridColumnLastNameTitle}</label>
+                    </tablechildren>
+                    <tablechildren sclass="cell">
+                        <textbox  id="txtLastName" name="" sclass="textarea"/>
+                    </tablechildren>
+                    <tablechildren sclass="cell" >
+                        <label>${labels.listPatient.gridColumnFirstNameTitle}</label>
+                    </tablechildren>
+                    <tablechildren sclass="cell">
+                        <textbox id="txtFirstName" name="" sclass="textarea"/>
+                    </tablechildren>
+                    <tablechildren sclass="cell" >
+                        <label>${labels.listPatient.gridColumnSecondNameTitle}</label>
+                    </tablechildren>
+                    <tablechildren sclass="cell">
+                        <textbox id="txtSecondName" name="" sclass="textarea"/>
+                    </tablechildren>
+                    <tablechildren sclass="cell" >
+                        <button type="submit" sclass="btn-radius">${labels.listPatient.buttonEdit}</button>
+                    </tablechildren>
+            </tablelayout>
+            </groupbox>
+        </div>
+        <div id="filterPanel" width="80%" style="padding : 20px;">
+            <groupbox>
+                <caption>${labels.listPatient.groupBoxFilterTitle}</caption>
+                <tablelayout columns="2" >
+                    <!--<tablechildren sclass="cell" >
+                        <label >${labels.listPatient.gridColumnLastNameTitle}</label>
+                    </tablechildren>-->
+                    <tablechildren sclass="cell">
+                        <textbox  id="" name="" sclass="textarea"/>
+                    </tablechildren>
+
+                    <!--<tablechildren sclass="cell" >
+                        <label>${labels.listPatient.gridColumnFirstNameTitle}</label>
+                    </tablechildren>
+                    <tablechildren sclass="cell">
+                        <textbox id="" name="" sclass="textarea"/>
+                    </tablechildren>
+                    <tablechildren sclass="cell" >
+                        <label>${labels.listPatient.gridColumnSecondNameTitle}</label>
+                    </tablechildren>
+                    <tablechildren sclass="cell">
+                        <textbox id="" name="" sclass="textarea"/>
+                    </tablechildren>-->
+                    <tablechildren sclass="cell" >
+                        <button type="submit" sclass="btn-radius">${labels.listPatient.buttonSearch}</button>
+                    </tablechildren>
+                </tablelayout>
+            </groupbox>
+
+        </div>
+        <div id="gridPatient" width="80%" >
+            <grid>
+                <auxhead>
+                    <auxheader colspan="5">${labels.listPatient.gridTitle}</auxheader>
+                </auxhead>
+                <columns>
+                    <column label="${labels.listPatient.gridColumnLastNameTitle}" align="center" />
+                    <column label="${labels.listPatient.gridColumnFirstNameTitle}" align="center" />
+                    <column label="${labels.listPatient.gridColumnSecondNameTitle}" align="center" />
+                    <column label="${labels.listPatient.gridColumnDateBirthTitle}" align="center" />
+                    <column label="${labels.listPatient.gridColumnGenderTitle}" align="center" />
+                </columns>
+                <rows>
+                    <row>
+                        <textbox value="@bind(vm.selectedContributor.LastName)" width="99%"  disabled="true"/>
+                        <textbox value="@bind(vm.selectedContributor.FirstName)" width="99%" disabled="true"/>
+                        <textbox value="@bind(vm.selectedContributor.SecondName)" width="99%" disabled="true"/>
+                        <textbox value="@bind(vm.selectedContributor.DateOfBirth)"  width="99%" disabled="true"/>
+                        <textbox value="@bind(vm.selectedContributor.Gender)" width="99%" disabled="true"/>
+                    </row>
+                </rows>
+            </grid>
+        </div>
+    </div>
+
+</zk>

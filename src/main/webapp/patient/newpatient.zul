@@ -1,0 +1,50 @@
+<zk>
+    <window id="windowNewPatient"
+            border="normal"
+            closable="true"
+            mode="popup"
+            width="350px"
+            height="200px"
+            position="center,top"
+            title="${labels.windowNewPatient.windowTitle}">
+
+        <style src="/resources/styles/login.css"/>
+
+            <div align="center" width="100%">
+                <tablelayout columns="2" >
+
+                    <tablechildren sclass="cell" >
+                        <label >${labels.windowNewPatient.labelLastName}</label>
+                    </tablechildren>
+                    <tablechildren sclass="cell">
+                        <textbox  id="txtLastName" name="" sclass="textarea"/>
+                    </tablechildren>
+
+                    <tablechildren sclass="cell" >
+                        <label>${labels.windowNewPatient.labelFirstName}</label>
+                    </tablechildren>
+                    <tablechildren sclass="cell">
+                        <textbox id="txtFirstName" name="" sclass="textarea"/>
+                    </tablechildren>
+
+                    <tablechildren sclass="cell" >
+                        <label>${labels.windowNewPatient.labelSecondName}</label>
+                    </tablechildren>
+                    <tablechildren sclass="cell">
+                        <textbox id="txtSecondName" name="" sclass="textarea"/>
+                    </tablechildren>
+
+                    <tablechildren colspan="2" sclass="cell">
+                        <separator height="10px"></separator>
+                        <div align="center" >
+                            <button type="submit" label="${labels.login.buttonSubmit}" sclass="btn-radius"/>
+                            <button type="reset" label="${labels.login.buttonReset}" sclass="btn-radius"/>
+                        </div>
+                    </tablechildren>
+                </tablelayout>
+            </div>
+
+
+    </window>
+
+</zk>

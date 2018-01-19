@@ -8,7 +8,6 @@
 
 	<properties>
 		<zk.version>8.0.2.2</zk.version>
-        <!--<zk.version>7.0.0</zk.version>-->
 		<spring.version>4.3.10.RELEASE</spring.version>
         <spring.securiry>4.2.3.RELEASE</spring.securiry>
 		<hibernate-version>5.2.10.Final</hibernate-version>
@@ -48,6 +47,24 @@
 	</pluginRepositories>
 
 	<dependencies>
+
+        <dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-base</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-structures-dstu3</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-client</artifactId>
+			<version>3.2.0</version>
+		</dependency>
 
         <!--Java dependencies-->
         <dependency>
@@ -305,10 +322,11 @@
                     </webAppConfig>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                 </configuration>
+
             </plugin>
 
-
-            <!-- Pack zips -->
+			<!--
+            &lt;!&ndash; Pack zips &ndash;&gt;
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.2</version>
@@ -328,7 +346,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
 
 
         </plugins>
