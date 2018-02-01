@@ -10,6 +10,7 @@ import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.Patient;
+import org.zkoss.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,9 @@ public class TestService {
 
         for(Patient patient : listPatiens){
             String encoded = ctx.newXmlParser().encodeResourceToString(patient);
+
+
+
             System.out.println(encoded);
         }
         /*

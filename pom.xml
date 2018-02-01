@@ -76,6 +76,12 @@
 
 
         <!--ZK dependencies -->
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zk</artifactId>
+            <version>${zk.version}</version>
+        </dependency>
+
 		<dependency>
 			<groupId>org.zkoss.theme</groupId>
 			<artifactId>atlantic</artifactId>
@@ -125,12 +131,15 @@
 			<version>${commons-io}</version>
 		</dependency>
 
+
 		<!--Bootstrap dependencies-->
+<!--
 		<dependency>
 			<groupId>org.zkoss.addons</groupId>
 			<artifactId>zk-bootstrap</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+-->
 
 		<!--Liquibase dependencies-->
         <dependency>
