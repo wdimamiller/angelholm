@@ -1,6 +1,14 @@
 <zk>
-    <window apply="org.angelholm.composer.ListPatientComposer"  >
+    <window  apply="org.angelholm.composer.ListPatientComposer">
+
         <style src="/resources/styles/listpatient.css"/>
+        <style>
+            .z-row-background-color-on-select,
+            .z-row-background-color-on-select > .z-row-inner,
+            .z-row-background-color-on-select > .z-cell {
+            background-color: #CCC !important;
+            }
+        </style>
 
         <div id="listPatientContent" width="100%" align="center">
 
@@ -62,12 +70,12 @@
                 </groupbox>
 
             </div>
-            <div id="gridPatient" width="80%" >
+            <div id="gridP" width="80%"   >
 
 
 
 
-                        <grid id="gridPatients" >
+                        <grid id="gridPatients"  >
                             <auxhead>
                                 <auxheader colspan="5">${labels.listPatient.gridTitle}</auxheader>
                             </auxhead>
