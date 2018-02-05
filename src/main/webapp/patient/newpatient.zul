@@ -3,48 +3,76 @@
             border="normal"
             closable="true"
             mode="popup"
-            width="350px"
-            height="200px"
+            width="500px"
+            height="400px"
             position="center,top"
-            title="${labels.windowNewPatient.windowTitle}">
+            title="${labels.windowNewPatient.windowTitle}"
+            apply="org.angelholm.composer.NewPatientComposer">
 
-        <style src="/resources/styles/login.css"/>
+        <style src="/resources/styles/newpatient.css"/>
 
-            <div align="center" width="100%">
-                <tablelayout columns="2" >
+        <div align="center" width="100%" sclass="grid">
 
-                    <tablechildren sclass="cell" >
-                        <label >${labels.windowNewPatient.labelLastName}</label>
-                    </tablechildren>
-                    <tablechildren sclass="cell">
-                        <textbox  id="txtLastName" name="" sclass="textarea"/>
-                    </tablechildren>
-
-                    <tablechildren sclass="cell" >
-                        <label>${labels.windowNewPatient.labelFirstName}</label>
-                    </tablechildren>
-                    <tablechildren sclass="cell">
-                        <textbox id="txtFirstName" name="" sclass="textarea"/>
-                    </tablechildren>
-
-                    <tablechildren sclass="cell" >
-                        <label>${labels.windowNewPatient.labelSecondName}</label>
-                    </tablechildren>
-                    <tablechildren sclass="cell">
-                        <textbox id="txtSecondName" name="" sclass="textarea"/>
-                    </tablechildren>
-
-                    <tablechildren colspan="2" sclass="cell">
-                        <separator height="10px"></separator>
-                        <div align="center" >
-                            <button type="submit" label="${labels.login.buttonSubmit}" sclass="btn-radius"/>
-                            <button type="reset" label="${labels.login.buttonReset}" sclass="btn-radius"/>
-                        </div>
-                    </tablechildren>
-                </tablelayout>
+            <div sclass="cell textleft" >
+                <label>${labels.windowNewPatient.labelLastName}</label>
             </div>
+            <div sclass="cell" >
+                <textbox  id="txtLastName" sclass="textarea"/>
+            </div>
+
+            <div sclass="cell textleft" >
+                <label>${labels.windowNewPatient.labelFirstName}</label>
+            </div>
+            <div sclass="cell" >
+                <textbox id="txtFirstName" sclass="textarea"/>
+            </div>
+
+            <div sclass="cell textleft" >
+                <label>${labels.windowNewPatient.labelSecondName}</label>
+            </div>
+            <div sclass="cell">
+                <textbox id="txtSecondName" sclass="textarea"/>
+            </div>
+
+            <div sclass="cell textleft" >
+                <label>${labels.windowNewPatient.labelDateOfBirth}</label>
+            </div>
+            <div sclass="cell">
+                <datebox id="dtbDateOfBirth" style="border-radius: 5px; width: 200px;"></datebox>
+            </div>
+
+        </div>
+
+        <separator></separator>
+
+        <div align="center">
+
+            <groupbox sclass="cell" >
+                <caption>${labels.windowNewPatient.labelGender}</caption>
+                <div >
+                    <radiogroup id="gender">
+                        <radio id="radioMale" value ="M" label="${labels.windowNewPatient.labelGenderMale}"  selected="true"/>
+                        <space spacing="50px" />
+                        <radio id="radioFemale" value ="F" label="${labels.windowNewPatient.labelGenderFemale}" />
+                    </radiogroup>
+                </div>
+                <separator></separator>
+                <separator></separator>
+            </groupbox>
+
+            <separator></separator>
+
+            <div sclass="cell">
+
+                <div align="center" >
+                    <button id="btnCreate"  label="${labels.windowNewPatient.buttonCreate}" sclass="btn-radius"/>
+                    <button id="btnReset"  label="${labels.windowNewPatient.buttonReset}" sclass="btn-radius"/>
+                </div>
+            </div>
+
+        </div>
 
 
     </window>
-
 </zk>
+
