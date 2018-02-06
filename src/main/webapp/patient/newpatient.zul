@@ -5,7 +5,7 @@
             mode="popup"
             width="500px"
             height="400px"
-            position="center,top"
+            position="center"
             title="${labels.windowNewPatient.windowTitle}"
             apply="org.angelholm.composer.NewPatientComposer">
 
@@ -47,7 +47,7 @@
 
         <div align="center">
 
-            <groupbox sclass="cell" >
+            <groupbox sclass="cell" open="false">
                 <caption>${labels.windowNewPatient.labelGender}</caption>
                 <div >
                     <radiogroup id="gender">

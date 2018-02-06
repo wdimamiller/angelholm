@@ -13,7 +13,7 @@
         <div id="listPatientContent" width="100%" align="center">
 
             <div id="editPanel" style="padding : 20px;" width="80%">
-                <groupbox>
+                <groupbox open="false">
                     <caption>${labels.listPatient.groupBoxEditTitle}</caption>
                     <div >
                         <div sclass="cell" >
@@ -35,7 +35,7 @@
                             <textbox id="editSecondName" name="" sclass="textarea"/>
                         </div>
                         <div sclass="cell" >
-                            <button id="btnEdit" type="button" sclass="btn-radius">${labels.listPatient.buttonEdit}</button>
+                            <button id="btnEdit" type="submit" sclass="btn-radius">${labels.listPatient.buttonEdit}</button>
                         </div>
                         <div sclass="cell" >
                             <button id="btnReset" type="button" sclass="btn-radius">${labels.windowNewPatient.buttonReset}</button>
@@ -45,7 +45,7 @@
                 </groupbox>
             </div>
             <div id="filterPanel" width="80%" style="padding : 20px;">
-                <groupbox>
+                <groupbox open="false">
                     <caption>${labels.listPatient.groupBoxFilterTitle}</caption>
                     <div >
                         <div sclass="cell" >
@@ -76,9 +76,6 @@
             </div>
             <div id="gridP" width="80%"   >
 
-
-
-
                 <grid id="gridPatients"  >
                     <auxhead>
                         <auxheader colspan="5">${labels.listPatient.gridTitle}</auxheader>
@@ -90,15 +87,6 @@
                         <column label="${labels.listPatient.gridColumnDateBirthTitle}" align="center" id="colDOB"/>
                         <column label="${labels.listPatient.gridColumnGenderTitle}" align="center" />
                     </columns>
-                    <!--                        <rows>
-                                                <row>
-                                                    <textbox value="" width="99%"  disabled="true"/>
-                                                    <textbox value="" width="99%" disabled="true"/>
-                                                    <textbox value="" width="99%" disabled="true"/>
-                                                    <textbox value=""  width="99%" disabled="true"/>
-                                                    <textbox value="" width="99%" disabled="true"/>
-                                                </row>
-                                            </rows>-->
                 </grid>
 
             </div>

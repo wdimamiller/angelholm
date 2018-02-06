@@ -2,13 +2,16 @@ package org.angelholm.composer;
 
 import org.angelholm.service.TestService;
 import org.zkoss.bind.annotation.AfterCompose;
+import org.zkoss.lang.Library;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zul.Button;
+import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Window;
 import org.zkoss.util.media.AMedia;
 
@@ -18,17 +21,35 @@ import java.util.HashMap;
 
 public class IndexComposer extends SelectorComposer {
 
+    @Wire
     Button btnLogin;
+    @Wire
     Button btnManual;
+    @Wire
+    Combobox comboTheme;
 
-    @Listen("onClick=#btnTest")
-    public void test(){
+    @Listen("onSelect=#comboTheme")
+    public void changeTheme(){
+        String theme = comboTheme.getSelectedItem().getLabel();
+        Library.setProperty("org.zkoss.theme.preferred", theme);
+        Executions.sendRedirect("");
+    }
 
-        TestService test = new TestService();
+    @Listen("onClick=#btnListPatient")
+    public void listPatient(){
 
-        test.test();
+        Executions.sendRedirect("/patient/listpatient.zul");
 
     }
+
+    @Listen("onClick=#btnNewPatient")
+    public void newPatient(){
+
+        Window window = (Window)Executions.createComponents("/patient/newpatient.zul", null, null);
+        window.doModal();
+
+    }
+
     @Listen("onClick=#btnManual")
     public void openPdfWindow(){
 
@@ -48,6 +69,7 @@ public class IndexComposer extends SelectorComposer {
         }
 
     }
+
 
     @Listen("onClick=#btnLogin")
     public void openLoginWindow(){

@@ -5,13 +5,30 @@
 
     <div sclass="div-wrapper" apply="org.angelholm.composer.IndexComposer">
             <div  sclass="div-header">
-                <div sclass="div-label-welcome">
+                <!--<div sclass="div-label-welcome">
                     <label>${labels.index.labelWelcome}</label>
-                </div>
-                <div sclass="div-btn-group">
-                    <button id="btnTest" sclass="btn-radius btn-right">Test</button>
+                </div>-->
+                <!--<div sclass="div-btn-group">-->
+                <div>
+                    <button id="btnListPatient" sclass="btn-radius btn-right">Список пацієнтів</button>
+                    <button id="btnNewPatient" sclass="btn-radius btn-right">Створити пацієнта</button>
                     <button id="btnLogin" sclass="btn-radius btn-right">${labels.index.buttonLogin}</button>
                     <button id="btnManual" sclass="btn-radius btn-right">${labels.index.buttonManual}</button>
+                </div>
+                <separator></separator>
+                <separator></separator>
+                <separator></separator>
+                <div>
+                    <label value="Theme" />
+                    <separator></separator>
+                    <combobox id="comboTheme">
+
+                        <comboitem label="atlantic" />
+                        <comboitem label="breeze" />
+                        <comboitem label="sapphire" />
+                        <comboitem label="silvertail" />
+
+                    </combobox>
                 </div>
             </div>
 
@@ -19,9 +36,9 @@
 
             </div>
 
-            <div sclass="div-footer">
+            <!--<div sclass="div-footer">
                 <label>${labels.index.labelCopyright}</label>
-            </div>
+            </div>-->
     </div>
 
 
