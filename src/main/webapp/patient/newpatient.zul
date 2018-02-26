@@ -1,4 +1,4 @@
-<zk>
+<zk xmlns:n="native">
     <window id="windowNewPatient"
             border="normal"
             closable="true"
@@ -10,68 +10,72 @@
             apply="org.angelholm.composer.NewPatientComposer">
 
         <style src="/resources/styles/newpatient.css"/>
+        <n:form >
+            <div align="center" width="100%" sclass="grid">
 
-        <div align="center" width="100%" sclass="grid">
-
-            <div sclass="cell textleft" >
-                <label>${labels.windowNewPatient.labelLastName}</label>
-            </div>
-            <div sclass="cell" >
-                <textbox  id="txtLastName" sclass="textarea"/>
-            </div>
-
-            <div sclass="cell textleft" >
-                <label>${labels.windowNewPatient.labelFirstName}</label>
-            </div>
-            <div sclass="cell" >
-                <textbox id="txtFirstName" sclass="textarea"/>
-            </div>
-
-            <div sclass="cell textleft" >
-                <label>${labels.windowNewPatient.labelSecondName}</label>
-            </div>
-            <div sclass="cell">
-                <textbox id="txtSecondName" sclass="textarea"/>
-            </div>
-
-            <div sclass="cell textleft" >
-                <label>${labels.windowNewPatient.labelDateOfBirth}</label>
-            </div>
-            <div sclass="cell">
-                <datebox id="dtbDateOfBirth" style="border-radius: 5px; width: 200px;"></datebox>
-            </div>
-
-        </div>
-
-        <separator></separator>
-
-        <div align="center">
-
-            <groupbox sclass="cell" open="false">
-                <caption>${labels.windowNewPatient.labelGender}</caption>
-                <div >
-                    <radiogroup id="gender">
-                        <radio id="radioMale" value ="M" label="${labels.windowNewPatient.labelGenderMale}"  selected="true"/>
-                        <space spacing="50px" />
-                        <radio id="radioFemale" value ="F" label="${labels.windowNewPatient.labelGenderFemale}" />
-                    </radiogroup>
+                <div sclass="cell textleft" >
+                    <label>${labels.windowNewPatient.labelLastName}</label>
                 </div>
-                <separator></separator>
-                <separator></separator>
-            </groupbox>
+                <div sclass="cell" >
+                    <textbox  id="txtLastName"
+                              sclass="textarea"
+                              constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.windowNewPatient.exceptionName}"/>
+                </div>
+
+                <div sclass="cell textleft" >
+                    <label>${labels.windowNewPatient.labelFirstName}</label>
+                </div>
+                <div sclass="cell" >
+                    <textbox id="txtFirstName" sclass="textarea"/>
+                </div>
+
+                <div sclass="cell textleft" >
+                    <label>${labels.windowNewPatient.labelSecondName}</label>
+                </div>
+                <div sclass="cell">
+                    <textbox id="txtSecondName" sclass="textarea"/>
+                </div>
+
+                <div sclass="cell textleft" >
+                    <label>${labels.windowNewPatient.labelDateOfBirth}</label>
+                </div>
+                <div sclass="cell" >
+                    <datebox id="dtbDateOfBirth" style="border-radius: 5px; width: 200px;"></datebox>
+                </div>
+
+            </div>
+
+
 
             <separator></separator>
 
-            <div sclass="cell">
+            <div align="center">
 
-                <div align="center" >
-                    <button id="btnCreate"  label="${labels.windowNewPatient.buttonCreate}" sclass="btn-radius"/>
-                    <button id="btnReset"  label="${labels.windowNewPatient.buttonReset}" sclass="btn-radius"/>
+                <groupbox sclass="cell" open="false">
+                    <caption>${labels.windowNewPatient.labelGender}</caption>
+                    <div >
+                        <radiogroup id="gender">
+                            <radio id="radioMale" value ="M" label="${labels.windowNewPatient.labelGenderMale}"  selected="true"/>
+                            <space spacing="50px" />
+                            <radio id="radioFemale" value ="F" label="${labels.windowNewPatient.labelGenderFemale}" />
+                        </radiogroup>
+                    </div>
+                    <separator></separator>
+                    <separator></separator>
+                </groupbox>
+
+                <separator></separator>
+
+                <div sclass="cell">
+
+                    <div align="center" >
+                        <button id="btnCreate"  label="${labels.windowNewPatient.buttonCreate}" sclass="btn-radius"/>
+                        <button type="reset" id="btnReset"  label="${labels.windowNewPatient.buttonReset}" sclass="btn-radius"/>
+                    </div>
                 </div>
+
             </div>
-
-        </div>
-
+        </n:form >
 
     </window>
 </zk>

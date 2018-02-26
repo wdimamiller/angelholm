@@ -1,5 +1,6 @@
 package org.angelholm.composer;
 
+import org.angelholm.service.PatientService;
 import org.angelholm.service.TestService;
 import org.zkoss.bind.annotation.AfterCompose;
 import org.zkoss.lang.Library;
@@ -28,6 +29,11 @@ public class IndexComposer extends SelectorComposer {
     @Wire
     Combobox comboTheme;
 
+    @Listen("onClick=#btnTest")
+    public void testButton(){
+        PatientService patientService = new PatientService();
+        patientService.testFunc();
+    }
     @Listen("onSelect=#comboTheme")
     public void changeTheme(){
         String theme = comboTheme.getSelectedItem().getLabel();

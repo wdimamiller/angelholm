@@ -4,7 +4,7 @@
             closable="true"
             mode="popup"
             width="350px"
-            height="200px"
+            height="300px"
             position="center,top"
             title="${labels.login.windowTitle}">
 
@@ -14,27 +14,27 @@
                    xmlns:html="native">
 
             <div align="center" width="100%">
-            <tablelayout columns="2" >
-                <tablechildren sclass="cell" >
+            <div sclass="grid" >
+                <div sclass="cell" >
                     <label >${labels.login.labelUsername}</label>
-                </tablechildren>
-                <tablechildren sclass="cell">
+                </div>
+                <div sclass="cell">
                     <textbox  id="txtUsername" name="j_username" sclass="textarea"/>
-                </tablechildren>
-                <tablechildren sclass="cell" >
+                </div>
+                <div sclass="cell" >
                     <label>${labels.login.labelPassword}</label>
-                </tablechildren>
-                <tablechildren sclass="cell">
+                </div>
+                <div sclass="cell">
                     <textbox id="txtPassword" type="password" name="j_password" sclass="textarea"/>
-                </tablechildren>
-                <tablechildren colspan="2" sclass="cell">
+                </div>
+                <div sclass="cell">
                     <separator height="10px"></separator>
                     <div align="center" >
                         <button type="submit" label="${labels.login.buttonSubmit}" sclass="btn-radius"/>
                         <button type="reset" label="${labels.login.buttonReset}" sclass="btn-radius"/>
                     </div>
-                </tablechildren>
-            </tablelayout>
+                </div>
+            </div>
             </div>
 
         </html:form>
