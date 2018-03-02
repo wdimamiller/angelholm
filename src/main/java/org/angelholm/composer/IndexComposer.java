@@ -1,7 +1,7 @@
 package org.angelholm.composer;
 
-import org.angelholm.service.PatientService;
-import org.angelholm.service.TestService;
+import org.angelholm.service.OrganizationService;
+import org.hl7.fhir.dstu3.model.Organization;
 import org.zkoss.bind.annotation.AfterCompose;
 import org.zkoss.lang.Library;
 import org.zkoss.util.resource.Labels;
@@ -31,8 +31,8 @@ public class IndexComposer extends SelectorComposer {
 
     @Listen("onClick=#btnTest")
     public void testButton(){
-        PatientService patientService = new PatientService();
-        patientService.testFunc();
+        OrganizationService organizationService = new OrganizationService();
+        organizationService.createOrganization(new Organization());
     }
     @Listen("onSelect=#comboTheme")
     public void changeTheme(){

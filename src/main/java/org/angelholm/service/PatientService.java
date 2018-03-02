@@ -24,15 +24,21 @@ public class PatientService {
 
     public void testFunc(){
 
+        /*ValueSet valueSet = new ValueSet();
+        //valueSet.setLanguage();
 
-       /* Bundle bundle = client
+
+
+        Bundle bundle = client
                 .search()
-                .forResource(CodeSystem.class)
-                .where(CodeSystem.NAME.matches().value("OrganizationType"))
+                .forResource(ValueSet.class)
+
+                .where(ValueSet.SP_RES_LANGUAGE)
+                .where("","fggf, gfg")
                 .returnBundle(Bundle.class)
                 .execute();*/
 
-        CodeSystem organizationCodeSystem = new CodeSystem();
+        /*CodeSystem organizationCodeSystem = new CodeSystem();
 
 
         organizationCodeSystem = client
@@ -44,9 +50,10 @@ public class PatientService {
         FhirContext ctx = new FhirContext(FhirVersionEnum.DSTU3);
         String encoded = ctx.newJsonParser().encodeResourceToString(organizationCodeSystem);
 
-        System.out.println(encoded);
+        System.out.println(encoded);*/
 
 
+/*
 
         OrganizationTypeEnumFactory enumFactory = new OrganizationTypeEnumFactory();
 
@@ -60,6 +67,7 @@ public class PatientService {
 
         for (OrganizationType c : OrganizationType.values())
             System.out.println(c);
+*/
 
 
 
