@@ -1,0 +1,18 @@
+<zk>
+        <borderlayout width="100%">
+
+            <north title=" " collapsible="true" >
+                <include src="/templates/header.zul"></include>
+            </north>
+
+            <west width="250px" collapsible="true" title=" ">
+                <include src="/templates/sidebar.zul"></include>
+            </west>
+
+            <center style="margin:10px;" autoscroll="true">
+                <include src="/templates/content.zul"></include>
+            </center>
+
+        </borderlayout>
+
+</zk>

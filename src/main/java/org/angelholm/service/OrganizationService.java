@@ -21,8 +21,10 @@ public class OrganizationService {
 
         ValueSet valueSet  = client.read()
                 .resource(ValueSet.class)
-                .withId("49954")
+                .withUrl("")
                 .execute();
+
+
 
       //  ValueSet.ValueSetComposeComponent  composeComponent = valueSet.
       //  composeComponent.get

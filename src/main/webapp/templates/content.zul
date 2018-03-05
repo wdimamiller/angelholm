@@ -1,0 +1,12 @@
+<zk>
+    <panel>
+        <caption>
+
+        </caption>
+        <panelchildren>
+            <include src="/patient/listpatient.zul"></include>
+            <include src="/patient/listpatient.zul"></include>
+            <include src="/patient/listpatient.zul"></include>
+        </panelchildren>
+    </panel>
+</zk>
