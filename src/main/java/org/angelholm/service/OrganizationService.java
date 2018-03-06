@@ -34,6 +34,9 @@ public class OrganizationService {
         List<Extension> extensionList =     a.getExtension();
         System.out.println(extensionList.get(0).toString());
 
+
+
+
         return 0;
     }
 }

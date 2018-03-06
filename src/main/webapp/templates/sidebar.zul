@@ -1,13 +1,29 @@
 <zk>
     <div>
-        <toolbar sclass="" height="50px" orient="vertical" >
-            <toolbarbutton label="ZK Framework" />
-            <toolbarbutton label="ZK Studio" />
-            <toolbarbutton label="ZK Spreadsheet" />
-            <toolbarbutton label="ZK Pivottable" />
-            <toolbarbutton label="ZK Calendar" />
-            <toolbarbutton label="ZK JSP" />
-            <toolbarbutton label="ZTL" />
-        </toolbar>
+        <menubar orient="vertical">
+            <menu label="Мої пацієнти" >
+               <!-- <menupopup>
+                    <menu label="Список">
+                        <menupopup>
+                            <menuitem label="Сьогодні" />
+                            <menuitem label="Вчора" />
+                        </menupopup>
+                    </menu>
+                    <menuitem label="Пошук" />
+                </menupopup>-->
+            </menu>
+            <menu label="Особисті дані">
+              <!--  <menupopup>
+                    <menuitem label="Про мене"/>
+                    <menuitem label="Тому подібне"/>
+                </menupopup>-->
+            </menu>
+            <menu label="Поліклініка">
+               <!-- <menupopup>
+                    <menuitem label="Опис" checkmark="true" autocheck="true" />
+                    <menuitem label="Інше" checkmark="true" autocheck="true" />
+                </menupopup>-->
+            </menu>
+        </menubar>
     </div>
 </zk>

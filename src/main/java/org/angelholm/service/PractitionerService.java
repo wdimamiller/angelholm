@@ -6,7 +6,6 @@ public class PractitionerService {
 
     public int createPractitioner( Practitioner practitioner){
 
-
         return 1;
     }
 }

@@ -1,6 +1,6 @@
 <zk>
-    <div>
-        <toolbar sclass="" height="50px"  >
+    <div apply="org.angelholm.composer.UserComposer">
+        <!--<toolbar sclass="" height="50px"  >
             <toolbarbutton label="ZK Framework" />
             <toolbarbutton label="ZK Studio" />
             <toolbarbutton label="ZK Spreadsheet" />
@@ -8,6 +8,6 @@
             <toolbarbutton label="ZK Calendar" />
             <toolbarbutton label="ZK JSP" />
             <toolbarbutton label="ZTL" />
-        </toolbar>
+        </toolbar>-->
     </div>
 </zk>
