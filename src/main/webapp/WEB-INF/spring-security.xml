@@ -7,7 +7,8 @@
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
      http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
-
+    <!--РОЗКОМЕНТУВАТИ У РАЗІ ДОДАВАННЯ SPRING SECURITY-->
+    <!--
     <global-method-security secured-annotations="enabled" />
 
 
@@ -38,9 +39,9 @@
 
     <authentication-manager>
         <authentication-provider user-service-ref="UserDetailsServiceImpl">
-            <!--<password-encoder hash="md5" />-->
+            &lt;!&ndash;<password-encoder hash="md5" />&ndash;&gt;
         </authentication-provider>
     </authentication-manager>
-    <beans:bean id="UserDetailsServiceImpl" class="org.angelholm.service.impl.UserDetailsServiceImpl" />
+    <beans:bean id="UserDetailsServiceImpl" class="org.angelholm.service.impl.UserDetailsServiceImpl" />-->
 
 </beans:beans>

@@ -38,13 +38,15 @@
 	<!-- 1. Spring RequestContextHolder -->
 	<!-- 2. Spring ThreadLocalSecurityContextHolderStrategy -->
 	<!-- ====================================================== -->
-	<preference>
+
+	<!--РОЗКОМЕНТУВАТИ У РАЗІ ДОДАВАННЯ SPRING SECURITY-->
+	<!--<preference>
 		<name>ThreadLocal</name>
 		<value>
 			org.springframework.security.core.context.ThreadLocalSecurityContextHolderStrategy=contextHolder;
 			org.springframework.web.context.request.RequestContextHolder=requestAttributesHolder,inheritableRequestAttributesHolder;
 		</value>
-	</preference>
+	</preference>-->
 
 	<system-config>
 		<ui-factory-class>
@@ -61,6 +63,8 @@
 		<max-desktops-per-session>10</max-desktops-per-session>
 		<timer-keep-alive>true</timer-keep-alive>
 	</session-config>
+
+
 
 	
 </zk>

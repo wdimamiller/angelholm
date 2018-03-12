@@ -3,69 +3,57 @@
             border="normal"
             closable="true"
             mode="popup"
-            width="500px"
-            height="400px"
+            width="600px"
+            height="600px"
             position="center"
             title="${labels.windowNewPatient.windowTitle}"
             apply="org.angelholm.composer.NewPatientComposer">
 
         <style src="/resources/styles/newpatient.css"/>
-        <n:form >
-            <div align="center" width="100%" sclass="grid">
-
-                <div sclass="cell textleft" >
-                    <label>${labels.windowNewPatient.labelLastName}</label>
-                </div>
-                <div sclass="cell" >
-                    <textbox  id="txtLastName"
-                              sclass="textarea"
-                              constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.windowNewPatient.exceptionName}"/>
-                </div>
-
-                <div sclass="cell textleft" >
-                    <label>${labels.windowNewPatient.labelFirstName}</label>
-                </div>
-                <div sclass="cell" >
-                    <textbox id="txtFirstName" sclass="textarea"/>
-                </div>
-
-                <div sclass="cell textleft" >
-                    <label>${labels.windowNewPatient.labelSecondName}</label>
-                </div>
-                <div sclass="cell">
-                    <textbox id="txtSecondName" sclass="textarea"/>
-                </div>
-
-                <div sclass="cell textleft" >
-                    <label>${labels.windowNewPatient.labelDateOfBirth}</label>
-                </div>
-                <div sclass="cell" >
-                    <datebox id="dtbDateOfBirth" style="border-radius: 5px; width: 200px;"></datebox>
-                </div>
-
-            </div>
-
-
-
-            <separator></separator>
-
-            <div align="center">
-
-                <groupbox sclass="cell" open="false">
-                    <caption>${labels.windowNewPatient.labelGender}</caption>
-                    <div >
-                        <radiogroup id="gender">
-                            <radio id="radioMale" value ="M" label="${labels.windowNewPatient.labelGenderMale}"  selected="true"/>
-                            <space spacing="50px" />
-                            <radio id="radioFemale" value ="F" label="${labels.windowNewPatient.labelGenderFemale}" />
-                        </radiogroup>
+        <borderlayout width="100%" >
+            <center autoscroll="true" style="padding:10px; margin:10px;">
+                <n:form >
+                    <div align="center">
+                        <groupbox sclass="cell" open="true">
+                            <caption>${labels.panelHumanName.title}</caption>
+                            <div align="center" width="100%" sclass="grid">
+                                <include src="/component/panelHumanName.zul"></include>
+                            </div>
+                        </groupbox>
                     </div>
                     <separator></separator>
-                    <separator></separator>
-                </groupbox>
+                    <div align="center">
 
-                <separator></separator>
+                        <groupbox sclass="cell" open="false">
+                            <caption>${labels.windowNewPatient.labelGender}</caption>
+                            <div >
+                                <radiogroup id="gender">
+                                    <radio id="radioMale" value ="M" label="${labels.windowNewPatient.labelGenderMale}"  selected="true"/>
+                                    <space spacing="50px" />
+                                    <radio id="radioFemale" value ="F" label="${labels.windowNewPatient.labelGenderFemale}" />
+                                </radiogroup>
+                            </div>
+                            <separator></separator>
+                            <separator></separator>
+                        </groupbox>
 
+                        <separator></separator>
+
+                        <groupbox sclass="cell" open="false">
+                            <caption>${labels.panelTelecom.title}</caption>
+                            <div >
+                                <include src="/component/panelTelecom.zul"></include>
+                            </div>
+                            <separator></separator>
+                            <separator></separator>
+                        </groupbox>
+
+
+
+                    </div>
+                </n:form >
+            </center>
+            <south style="padding:10px; margin:10px; border:none;">
                 <div sclass="cell">
 
                     <div align="center" >
@@ -73,10 +61,8 @@
                         <button type="reset" id="btnReset"  label="${labels.windowNewPatient.buttonReset}" sclass="btn-radius"/>
                     </div>
                 </div>
-
-            </div>
-        </n:form >
-
+            </south>
+        </borderlayout>
     </window>
 </zk>
 

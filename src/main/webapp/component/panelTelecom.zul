@@ -1,0 +1,22 @@
+<zk>
+    <panel id="panelTelecom" apply="org.angelholm.composer.PanelTelecomComposer">
+        <panelchildren>
+
+            <div sclass="cell textleft" >
+                <label>${labels.panelTelecom.labelEmail}</label>
+            </div>
+            <div sclass="cell" >
+                <textbox  id="txtEmail"
+                          sclass="textarea"/>
+            </div>
+            <div sclass="cell textleft" >
+                <label>${labels.panelTelecom.labelPhone}</label>
+            </div>
+            <div sclass="cell" >
+                <textbox id="txtPhone" sclass="textarea"/>
+            </div>
+
+        </panelchildren>
+    </panel>
+
+</zk>

@@ -1,0 +1,34 @@
+<zk>
+    <panel id="panelHumanName" apply="org.angelholm.composer.PanelHumanNameComposer">
+        <panelchildren>
+            <div sclass="cell textleft" >
+                <label>${labels.panelHumanName.labelLastName}</label>
+            </div>
+            <div sclass="cell" >
+                <textbox  id="txtLastName"
+                          sclass="textarea"
+                          constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
+            </div>
+
+            <div sclass="cell textleft" >
+                <label>${labels.panelHumanName.labelFirstName}</label>
+            </div>
+            <div sclass="cell" >
+                <textbox id="txtFirstName"
+                         sclass="textarea"
+                         constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
+            </div>
+
+            <div sclass="cell textleft" >
+                <label>${labels.panelHumanName.labelSecondName}</label>
+            </div>
+            <div sclass="cell">
+                <textbox id="txtSecondName"
+                         sclass="textarea"
+                         constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
+            </div>
+        </panelchildren>
+
+    </panel>
+</zk>
+
