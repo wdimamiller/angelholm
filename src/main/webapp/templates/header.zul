@@ -1,5 +1,5 @@
 <zk>
-    <div apply="org.angelholm.composer.UserComposer">
+    <div apply="org.angelholm.composer.PanelUserComposer">
         <!--<toolbar sclass="" height="50px"  >
             <toolbarbutton label="ZK Framework" />
             <toolbarbutton label="ZK Studio" />

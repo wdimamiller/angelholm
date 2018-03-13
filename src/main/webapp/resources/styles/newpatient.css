@@ -1,0 +1,26 @@
+.cell{
+    font-weight: bold;
+    padding: 3px;
+    vertical-align: middle;
+}
+.btn-radius{
+    border-radius: 5px;
+}
+.textarea{
+    border-radius: 5px;
+    /*width: 200px;*/
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr  ;
+    grid-template-rows: auto auto;
+}
+/*
+.grid > div {
+    border: 2px solid #7EC6FE;
+    border-radius: 5px;
+    padding: 1em;
+    color: #149CFA;
+    background: #E8F5FF;
+}*/

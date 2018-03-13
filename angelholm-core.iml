@@ -43,6 +43,47 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.6" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: org.liquibase:liquibase-core:3.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.17" level="project" />
+    <orderEntry type="library" name="Maven: org.liquibase:liquibase-maven-plugin:3.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-api:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-project:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-profile:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-model:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-artifact-manager:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-repository-metadata:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.wagon:wagon-provider-api:1.0-alpha-5" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-utils:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-artifact:2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-container-default:1.0-alpha-8" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:3.8.1" level="project" />
+    <orderEntry type="library" name="Maven: classworlds:classworlds:1.1-alpha-2" level="project" />
+    <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.1.4" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.2.10.Final" level="project" />
+    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.6.6" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-osgi:5.2.10.Final" level="project" />
+    <orderEntry type="library" name="Maven: javax.interceptor:javax.interceptor-api:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:4.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.osgi:org.osgi.compendium:4.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-envers:5.2.10.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-c3p0:5.2.10.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.mchange:c3p0:0.9.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.11" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-proxool:5.2.10.Final" level="project" />
+    <orderEntry type="library" name="Maven: proxool:proxool:0.8.3" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-infinispan:5.2.10.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.infinispan:infinispan-core:8.2.5.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.infinispan:infinispan-commons:8.2.5.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jgroups:jgroups:3.6.7.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.marshalling:jboss-marshalling-osgi:1.4.10.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-ehcache:5.2.10.Final" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache:2.10.3" level="project" />
     <orderEntry type="library" name="Maven: ca.uhn.hapi.fhir:hapi-fhir-base:3.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.6" level="project" />

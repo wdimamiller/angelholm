@@ -1,0 +1,7 @@
+<zk>
+    <panel id="panelAddress" apply="org.angelholm.composer.PanelAddressComposer">
+        <panelchildren>
+
+        </panelchildren>
+    </panel>
+</zk>
