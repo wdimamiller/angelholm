@@ -1,6 +1,6 @@
 <zk>
     <window id="windowPdfBrowser"
-            apply="org.angelholm.composer.PdfWindowComposer"
+            apply="org.angelholm.composer.WindowManualComposer"
             border="normal"
             closable="true"
             mode="popup"

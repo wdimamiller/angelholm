@@ -1,6 +1,6 @@
 <zk>
     <panel id="panelHumanName" apply="org.angelholm.composer.PanelHumanNameComposer">
-        <caption>${labels.panelHumanName.title}</caption>
+
         <panelchildren>
             <div sclass="cell textleft" >
                 <label>${labels.panelHumanName.labelLastName}</label>

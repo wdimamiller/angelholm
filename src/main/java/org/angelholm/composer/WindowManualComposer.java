@@ -6,7 +6,7 @@ import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Iframe;
 import org.zkoss.zul.Window;
 
-public class PdfWindowComposer extends GenericForwardComposer {
+public class WindowManualComposer extends GenericForwardComposer {
 
     Iframe iframePdfContent;
     Window windowPdfBrowser;

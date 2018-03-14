@@ -22,56 +22,6 @@ public class PatientService {
     IGenericClient client = FhirGenericClientService.getInstance();
 
 
-    public void testFunc(){
-
-        /*ValueSet valueSet = new ValueSet();
-        //valueSet.setLanguage();
-
-
-
-        Bundle bundle = client
-                .search()
-                .forResource(ValueSet.class)
-
-                .where(ValueSet.SP_RES_LANGUAGE)
-                .where("","fggf, gfg")
-                .returnBundle(Bundle.class)
-                .execute();*/
-
-        /*CodeSystem organizationCodeSystem = new CodeSystem();
-
-
-        organizationCodeSystem = client
-                .read()
-                .resource(CodeSystem.class)
-                .withId("44952")
-                .encodedJson()
-                .execute();
-        FhirContext ctx = new FhirContext(FhirVersionEnum.DSTU3);
-        String encoded = ctx.newJsonParser().encodeResourceToString(organizationCodeSystem);
-
-        System.out.println(encoded);*/
-
-
-/*
-
-        OrganizationTypeEnumFactory enumFactory = new OrganizationTypeEnumFactory();
-
-        try {
-            OrganizationType organizationType =  OrganizationType.fromCode(encoded);
-            System.out.println(organizationType.toCode());
-        } catch (FHIRException e) {
-            e.printStackTrace();
-        }
-
-
-        for (OrganizationType c : OrganizationType.values())
-            System.out.println(c);
-*/
-
-
-
-    }
     public ArrayList<Patient> getListPatiens(){
 
         ArrayList<Patient> listPatients = new ArrayList<>();

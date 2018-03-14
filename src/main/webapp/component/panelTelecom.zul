@@ -2,6 +2,11 @@
     <panel id="panelTelecom" apply="org.angelholm.composer.PanelTelecomComposer">
         <panelchildren>
 
+            <listbox id="listCodePointsSystem">
+
+            </listbox>
+
+
             <div sclass="cell textleft" >
                 <label>${labels.panelTelecom.labelEmail}</label>
             </div>
