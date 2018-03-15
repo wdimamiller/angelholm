@@ -12,6 +12,7 @@
         <spring.securiry>4.2.3.RELEASE</spring.securiry>
 		<hibernate-version>5.2.10.Final</hibernate-version>
 		<liquibase-version>3.5.3</liquibase-version>
+		<apache.commons.configuration.version>2.2</apache.commons.configuration.version>
 		<commons-io>2.4</commons-io>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}-FL-${maven.build.timestamp}</packname>
@@ -47,7 +48,21 @@
 	</pluginRepositories>
 
 	<dependencies>
+		<!--APACHE COMMONS CONFIGURATION-->
 
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-configuration2</artifactId>
+			<version>${apache.commons.configuration.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.3</version>
+		</dependency>
+
+
+		<!--HAPI FHIR-->
         <dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-base</artifactId>

@@ -6,7 +6,9 @@ import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
 import ca.uhn.fhir.rest.gclient.StringClientParam;
 import org.angelholm.service.FhirGenericClientService;
+import org.angelholm.service.ValueSetService;
 import org.hl7.fhir.dstu3.model.*;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zul.*;
@@ -35,18 +37,12 @@ public class PanelTelecomComposer extends SelectorComposer<Panel> {
 
     private void renderList(){
 
-        IGenericClient client = FhirGenericClientService.getInstance();
+        ValueSetService valueSetService = new ValueSetService();
+        ValueSet contactPointValueSet = valueSetService.getValueSet("uk_UA", "ContactPointSystem");
 
-
-        Bundle bundle = client.search()
-                .forResource(ValueSet.class)
-                .where(ValueSet.NAME.matchesExactly().value("ContactPointSystem"))
-                .and(new StringClientParam(ValueSet.SP_RES_LANGUAGE).matches().value("uk_UA"))
-                .returnBundle(Bundle.class)
-                .execute();
-
-        ValueSet contactPointValueSet = (ValueSet) bundle.getEntry().get(0).getResource();
-
+        String ext =  Executions.getCurrent().getHeader("accept-language");
+        System.out.println(ext);
+        
         int size = contactPointValueSet.getExpansion().getTotal();
         ValueSet.ValueSetExpansionContainsComponent containsComponent = contactPointValueSet.getExpansion().getContains().get(0);
 
