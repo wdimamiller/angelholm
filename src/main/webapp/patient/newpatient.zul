@@ -3,28 +3,26 @@
             border="normal"
             closable="true"
             mode="popup"
-            width="600px"
-            height="600px"
+            width="800px"
+            height="800px"
             position="center"
             title="${labels.windowNewPatient.windowTitle}"
             apply="org.angelholm.composer.NewPatientComposer">
 
         <style src="/resources/styles/newpatient.css"/>
         <borderlayout width="100%" >
-            <center autoscroll="true" style="padding:10px; margin:10px;">
+            <center autoscroll="true" >
                 <n:form >
-                    <div align="center">
-                        <groupbox sclass="cell" open="true">
-                            <caption>${labels.panelHumanName.title}</caption>
-                            <div align="center" width="100%" sclass="grid">
-                                <include src="/component/panelHumanName.zul"></include>
-                            </div>
-                        </groupbox>
-                    </div>
-                    <separator></separator>
-                    <div align="center">
 
-                        <groupbox sclass="cell" open="false">
+                    <div align="center" width="100%" >
+                        <include src="/component/panelHumanName.zul"></include>
+                    </div>
+
+                    <separator></separator>
+
+
+
+                    <groupbox sclass="cell" open="false">
                             <caption>${labels.windowNewPatient.labelGender}</caption>
                             <div >
                                 <radiogroup id="gender">
@@ -34,23 +32,12 @@
                                 </radiogroup>
                             </div>
                             <separator></separator>
-                            <separator></separator>
-                        </groupbox>
 
-                        <separator></separator>
-
-                        <groupbox sclass="cell" open="false">
-                            <caption>${labels.panelTelecom.title}</caption>
-                            <div >
+                    </groupbox>
+                    <div align="center" width="100%">
                                 <include src="/component/panelTelecom.zul"></include>
-                            </div>
-                            <separator></separator>
-                            <separator></separator>
-                        </groupbox>
-
-
-
                     </div>
+
                 </n:form >
             </center>
             <south style="padding:10px; margin:10px; border:none;">

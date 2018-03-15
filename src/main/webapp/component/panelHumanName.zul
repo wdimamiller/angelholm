@@ -1,5 +1,12 @@
 <zk>
-    <panel id="panelHumanName" apply="org.angelholm.composer.PanelHumanNameComposer">
+    <panel id="panelHumanName" apply="org.angelholm.composer.PanelHumanNameComposer"
+           width="100%"
+           collapsible="true"
+           border="rounded">
+
+        <caption >
+            <label>Паспортні дані</label>
+        </caption>
 
         <panelchildren>
             <div sclass="cell textleft" >

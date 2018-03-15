@@ -1,25 +1,29 @@
 <zk>
-    <panel id="panelTelecom" apply="org.angelholm.composer.PanelTelecomComposer">
+    <panel id="panelTelecom"
+           apply="org.angelholm.composer.PanelTelecomComposer"
+           width="100%"
+           collapsible="true"
+           open="false"
+           border="rounded">
+
+        <caption >
+            <label>Контактні дані</label>
+        </caption>
         <panelchildren>
 
-            <listbox id="listCodePointsSystem">
+            <separator height="10px"></separator>
+            <div>
+                <listbox sclass="cell" id="listContactPointCandidate" rows="1" mold="select">
 
-            </listbox>
+                </listbox>
+                <button id="btnAddContactPoint">Add</button>
+            </div>
+            <div width="50%">
+                <listbox id="listContactPointChosen">
 
-
-            <div sclass="cell textleft" >
-                <label>${labels.panelTelecom.labelEmail}</label>
+                </listbox>
             </div>
-            <div sclass="cell" >
-                <textbox  id="txtEmail"
-                          sclass="textarea"/>
-            </div>
-            <div sclass="cell textleft" >
-                <label>${labels.panelTelecom.labelPhone}</label>
-            </div>
-            <div sclass="cell" >
-                <textbox id="txtPhone" sclass="textarea"/>
-            </div>
+            <separator height="10px"></separator>
 
         </panelchildren>
     </panel>
