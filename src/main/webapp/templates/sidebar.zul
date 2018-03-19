@@ -2,7 +2,7 @@
     <div>
         <menubar orient="vertical">
             <menu label="Мої пацієнти" >
-               <!-- <menupopup>
+                <menupopup>
                     <menu label="Список">
                         <menupopup>
                             <menuitem label="Сьогодні" />
@@ -10,7 +10,7 @@
                         </menupopup>
                     </menu>
                     <menuitem label="Пошук" />
-                </menupopup>-->
+                </menupopup>
             </menu>
             <menu label="Особисті дані">
               <!--  <menupopup>

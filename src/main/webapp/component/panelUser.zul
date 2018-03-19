@@ -1,91 +1,81 @@
 <zk>
     <style>
-        .z-menubar{
-        padding: 0;
-        border: 0;
-        background: none;
-        height:50px;
+        .panelUser.z-panel.z-panel-body{
+            margin: 0px;
+            padding: 0px;
         }
-        .z-menu{
+
+        .panelUser.z-panel-noheader .z-panel-body{
+            margin:0px;
+            padding:0px;
+        }
+        .panelUser.z-panel-noheader.z-panel-noframe .z-panel-body{
+            margin:0px;
+            padding:0px;
+        }
+
+        .btnUserClass .z-icon-caret-down {
+            line-height: 2;
+        }
+
+        .btnUserClass .z-button-image {
+            border-radius: 50%;
+            max-width: 40px;
+            <!--float: left;-->
+            left: 20px;
+        }
+
+        .btnUserClass{
             width: 200px;
+            border:none;
+            border-radius:0%;
         }
-        .z-menuitem{
-            width:195px;
-        }
-        .z-menu-text {
-        text-shadow: none;
-        vertical-align:middle;
-        }
-        .z-menu-content{
-        height:50px;
-        border:none;
-        vertical-align:center;
-        }
-        .z-menu-image {
-        border-radius: 50%;
-        max-width: 40px;
-        }
-        .z-icon-caret-down {
-        font-size: 50px;
-        top:20px;
+        .btnUserHome{
+            border:none;
+            border-radius:0%;
+            padding-left: 10px;
+            padding-right: 10px;
         }
     </style>
 
     <panel id="panelUser"
+           sclass="panelUser"
            apply="org.angelholm.composer.PanelUserComposer"
            width="100%"
-           height="50px">
-        <panelchildren>
+           height="50px"
+           border="none">
 
+        <panelchildren style="margin:0px;padding:0px;">
+            <borderlayout height="50px" style=" margin: 0px;padding: 0px ;" sclass="z-menubar">
+                    <west border="none" style=" margin-left: 0px;padding: 0px;">
+                        <button id="btnUserHome" sclass="btnUserHome z-menubar" iconSclass="z-icon-home"
+                                height="100%" >${labels.panelUser.btnHomeTitle}</button>
 
-                    <menubar width="100%">
+                    </west>
+                    <east border="none">
+                        <button  id="btnUser"
+                                 height="100%"
+                                 sclass="btnUserClass z-menubar"
+                                 image="/resources/images/avatar.png"
+                                 popup="popupUser, position=after_start"
+                                 label="${labels.panelUser.btnUserWelcome}"
+                                 iconSclass="z-icon-caret-down"
+                                 style=" margin: 0px; padding: 0px;"
+                                 dir="reverse">
+                        </button>
 
-                        <menu  image="/resources/images/avatar.png"
-                               height="50px"
-                               label="WELCOME"
-                        >
-                            <menupopup >
-                                <menuitem label="Settings" iconSclass="z-icon-cog"/>
-                                <menuitem label="Profile" iconSclass="z-icon-user"/>
-                                <menuseparator/>
-                                <menuitem label="Logout" iconSclass="z-icon-off"/>
-                            </menupopup>
-                        </menu>
-                    </menubar>
-
-
-
-
-
-            <!--
-            <div sclass="cell textleft" >
-                <label>${labels.panelHumanName.labelLastName}</label>
-            </div>
-            <div sclass="cell" >
-                <textbox  id="txtLastName"
-                          sclass="textarea"
-                          constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
-            </div>
-
-            <div sclass="cell textleft" >
-                <label>${labels.panelHumanName.labelFirstName}</label>
-            </div>
-            <div sclass="cell" >
-                <textbox id="txtFirstName"
-                         sclass="textarea"
-                         constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
-            </div>
-
-            <div sclass="cell textleft" >
-                <label>${labels.panelHumanName.labelSecondName}</label>
-            </div>
-            <div sclass="cell">
-                <textbox id="txtSecondName"
-                         sclass="textarea"
-                         constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
-            </div>-->
+                    </east>
+            </borderlayout>
 
         </panelchildren>
     </panel>
+
+    <menupopup id="popupUser" width="200px">
+        <menuitem label="${labels.panelUser.menuSettings}" iconSclass="z-icon-cog"/>
+        <menuitem label="${labels.panelUser.menuProfile}" iconSclass="z-icon-user"/>
+        <menuseparator/>
+        <menuitem label="${labels.panelUser.menuLogout}" iconSclass="z-icon-off"/>
+    </menupopup>
 </zk>
+
 
