@@ -25,6 +25,8 @@ public class ValueSetService {
         if(language.equals("ru_RU")){
             language = "uk_UA";
         }
+        language = "uk_UA";
+
         Bundle bundle = client.search()
                 .forResource(ValueSet.class)
                 .where(ValueSet.NAME.matchesExactly().value(config.getString(className)))

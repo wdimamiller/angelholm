@@ -31,6 +31,8 @@
                         <comboitem label="breeze" />
                         <comboitem label="sapphire" />
                         <comboitem label="silvertail" />
+                        <comboitem label="amelia" />
+                        <comboitem label="cyborg" />
 
                     </combobox>
                 </div>
