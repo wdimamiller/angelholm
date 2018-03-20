@@ -1,6 +1,8 @@
 <zk>
     <div>
         <menubar orient="vertical">
+
+
             <menu label="Мої пацієнти" >
                 <menupopup>
                     <menu label="Список">

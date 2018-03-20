@@ -15,13 +15,14 @@
         }
 
         .btnUserClass .z-icon-caret-down {
-            line-height: 2;
+            line-height: 1;
         }
 
         .btnUserClass .z-button-image {
+            margin-left: 5px;
+            margin-right: 5px;
             border-radius: 50%;
             max-width: 40px;
-            <!--float: left;-->
             left: 20px;
         }
 

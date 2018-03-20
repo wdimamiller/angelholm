@@ -1,0 +1,18 @@
+<zk>
+    <panel id="panelAdministrativeData">
+        <panelchildren>
+                    <div>
+                        <label>Стать</label>
+                        <combobox>
+                            <comboitem label="Чоловік"/>
+                            <comboitem label="Жінка"/>
+                        </combobox>
+                    </div>
+
+                    <div>
+                        <label>Дата народження</label>
+                        <datebox></datebox>
+                    </div>
+        </panelchildren>
+    </panel>
+</zk>

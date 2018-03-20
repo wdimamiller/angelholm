@@ -36,6 +36,7 @@ public class PanelAddressComposer extends SelectorComposer<Panel> {
         address.setCity(txtCity.getValue());
         address.setState(txtState.getValue());
 
+
         return address;
     }
 }
