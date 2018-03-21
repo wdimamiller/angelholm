@@ -1,6 +1,16 @@
 <zk>
     <panel id="panelAddress" apply="org.angelholm.composer.PanelAddressComposer">
         <panelchildren>
+            <div>
+                <label>Країна</label>
+                <combobox id="lstCountry" constraint="no empty">
+                </combobox>
+            </div>
+            <div>
+                <label>Область</label>
+                    <combobox id="lstState">
+                </combobox>
+            </div>
 
         </panelchildren>
     </panel>

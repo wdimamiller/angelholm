@@ -40,6 +40,22 @@ public class ValueSetService {
             return (ValueSet) bundle.getEntryFirstRep().getResource();
     }
 
+    public ValueSet getValueSetByName(String valueSetName){
+
+
+        Bundle bundle = client.search()
+                .forResource(ValueSet.class)
+                .where(ValueSet.NAME.matchesExactly().value(valueSetName))
+                .returnBundle(Bundle.class)
+                .execute();
+
+        if(bundle.getTotal() == 0)
+            return null;
+        else
+            return (ValueSet) bundle.getEntryFirstRep().getResource();
+    }
+
+
     public List<ValueSet.ValueSetExpansionContainsComponent> getContains(String language, String className){
 
         Configuration config =  ConfigurationFilesService.getConfigFile();
