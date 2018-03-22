@@ -6,43 +6,34 @@
             width="800px"
             height="800px"
             position="center"
-            title="${labels.windowPractitioner.windowTitle}"
+            title="Новий користувач"
             apply="org.angelholm.composer.NewPractitionerComposer">
 
         <style src="/resources/styles/newpatient.css"/>
         <borderlayout width="100%" >
-            <center autoscroll="true" >
-                <n:form >
+            <center autoscroll="true" border="none" >
+                <n:form>
 
                     <div align="center" width="100%" >
                         <include src="/component/panelHumanName.zul"></include>
                     </div>
 
-                    <separator></separator>
+                    <div align="center" width="100%">
+                        <include src="/component/panelAdministrativeData.zul"></include>
+                    </div>
 
-
-
-                    <groupbox sclass="cell" open="false">
-                        <caption>${labels.windowNewPatient.labelGender}</caption>
-                        <div >
-                            <radiogroup id="gender">
-                                <radio id="radioMale" value ="M" label="${labels.windowNewPatient.labelGenderMale}"  selected="true"/>
-                                <space spacing="50px" />
-                                <radio id="radioFemale" value ="F" label="${labels.windowNewPatient.labelGenderFemale}" />
-                            </radiogroup>
-                        </div>
-                        <separator></separator>
-
-                    </groupbox>
                     <div align="center" width="100%">
                         <include src="/component/panelTelecom.zul"></include>
                     </div>
+                    <div align="center" width="100%">
+                        <include src="/component/panelAddress.zul"></include>
+                    </div>
 
-                </n:form >
+                </n:form>
             </center>
-            <south style="padding:10px; margin:10px; border:none;">
-                <div sclass="cell">
 
+            <south style="padding:10px; margin:10px; border:none;">
+                <div sclass="cell" style="padding:10px; margin:10px; border:none;" >
                     <div align="center" >
                         <button id="btnCreate"  label="${labels.windowNewPatient.buttonCreate}" sclass="btn-radius"/>
                         <button type="reset" id="btnReset"  label="${labels.windowNewPatient.buttonReset}" sclass="btn-radius"/>

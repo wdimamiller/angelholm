@@ -1,39 +1,72 @@
 <zk>
+    <style>
+        .panelHumanName.z-panel.z-panel-body{
+        margin: 0px;
+        padding: 0px;
+        }
+
+        .panelHumanName.z-panel-noheader .z-panel-body{
+        margin:0px;
+        padding:0px;
+        }
+        .panelHumanName.z-panel-noheader.z-panel-noframe .z-panel-body{
+        margin:0px;
+        padding:0px;
+        }
+
+        .grid {
+        width: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr  ;
+        grid-template-rows: auto auto;
+        }
+
+        .grid > div {
+        border: 2px solid #7EC6FE;
+        border-radius: 5px;
+        padding: 1em;
+        color: #149CFA;
+        background: #E8F5FF;
+        }
+
+        .boxvalue,.labelvalue{
+        margin: 3px;
+        }
+        .wrapper {
+        margin: 20px;
+        }
+
+    </style>
     <panel id="panelHumanName" apply="org.angelholm.composer.PanelHumanNameComposer"
            width="100%"
            collapsible="true"
-           border="rounded">
+           border="normal">
 
         <caption >
-            <label>Паспортні дані</label>
+            <label>${labels.panelHumanName.title}</label>
         </caption>
 
         <panelchildren>
-            <div sclass="cell textleft" >
-                <label>${labels.panelHumanName.labelLastName}</label>
-            </div>
-            <div sclass="cell" >
-                <textbox  id="txtLastName"
-                          sclass="textarea"
-                          constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
-            </div>
+            <div sclass="wrapper" align="center">
+                <div sclass="grid" width="400px" align="left">
 
-            <div sclass="cell textleft" >
-                <label>${labels.panelHumanName.labelFirstName}</label>
-            </div>
-            <div sclass="cell" >
-                <textbox id="txtFirstName"
-                         sclass="textarea"
-                         constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
-            </div>
+                        <label sclass="labelvalue">${labels.panelHumanName.labelLastName}</label>
+                        <textbox  id="txtLastName"
+                                  sclass="textarea boxvalue"
+                                  constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
 
-            <div sclass="cell textleft" >
-                <label>${labels.panelHumanName.labelSecondName}</label>
-            </div>
-            <div sclass="cell">
-                <textbox id="txtSecondName"
-                         sclass="textarea"
-                         constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
+
+                        <label sclass="labelvalue">${labels.panelHumanName.labelFirstName}</label>
+                        <textbox id="txtFirstName"
+                                 sclass="textarea boxvalue"
+                                 constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
+
+                        <label sclass="labelvalue">${labels.panelHumanName.labelSecondName}</label>
+                        <textbox id="txtSecondName"
+                                 sclass="textarea boxvalue"
+                                 constraint="/[a-zA-Zа-яА-ЯёЁЇїІіЄєҐґЬьЮюЯяЇїІіЄєҐґ`´ʼ’ʼ’]+/:${labels.panelHumanName.exceptionName}"/>
+
+                </div>
             </div>
         </panelchildren>
 

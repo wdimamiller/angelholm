@@ -1,6 +1,7 @@
 package org.angelholm.composer;
 
 import org.angelholm.service.PatientService;
+import org.hl7.fhir.dstu3.model.Address;
 import org.hl7.fhir.dstu3.model.Enumerations;
 import org.hl7.fhir.dstu3.model.HumanName;
 import org.hl7.fhir.dstu3.model.Patient;
@@ -30,6 +31,10 @@ public class NewPatientComposer extends SelectorComposer <Window>{
     Panel panelHumanName;
     @Wire("include #panelTelecom")
     Panel panelTelecom;
+    @Wire("include #panelAddress")
+    Panel panelAddress;
+    @Wire("include #panelAdministrativeData")
+    Panel panelAdministrativeData;
 
 
     PatientService patientService;
@@ -37,23 +42,27 @@ public class NewPatientComposer extends SelectorComposer <Window>{
     @Listen("onClick=#btnCreate")
     public void createPatient(){
 
+        //create patient
         Patient patient = new Patient();
+
+        //TODO normal human identifier
         patient.addIdentifier().setSystem("urn:system").setValue("123456");
 
+        //human name
         HumanName name = ((PanelHumanNameComposer)  panelHumanName.getAttribute("PanelHumanNameComposer")).getHumanName();
         patient.addName(name);
 
+        //telecom
         patient.setTelecom(( (PanelTelecomComposer) panelTelecom.getAttribute("PanelTelecomComposer")).getTelecom());
 
-        patient.setBirthDate(new Date());
+        //administrative data
+        patient.setBirthDate ( ( (PanelAdministrativeDataComposer) panelAdministrativeData.getAttribute("PanelAdministrativeDataComposer")).getDateOfBirth());
+        String gender = ((PanelAdministrativeDataComposer) panelAdministrativeData.getAttribute("PanelAdministrativeDataComposer")).getGender();
+        patient.setGender( new Enumerations.AdministrativeGenderEnumFactory().fromCode(gender));
 
-        if(radioMale.isSelected()){
-            patient.setGender(Enumerations.AdministrativeGender.MALE);
-        }
-        else{
-            patient.setGender(Enumerations.AdministrativeGender.FEMALE);
-        }
-
+        //address
+        Address address = ((PanelAddressComposer) panelAddress.getAttribute("PanelAddressComposer")).getAddress();
+        patient.addAddress(address);
 
         long status  = patientService.createPatient(patient);
 

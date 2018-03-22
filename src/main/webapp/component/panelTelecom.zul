@@ -1,29 +1,104 @@
 <zk>
+    <style>
+        .wrapper{
+           width:400px;
+        }
+
+        .z-listbox-odd.z-listitem{
+
+            background: none;
+            border-color: none;
+
+        }
+        .z-listbox.z-listitem{
+
+        background: none;
+        border-color: none;
+
+        }
+
+        .z-listitem:hover>.z-listcell{
+        background:none;
+        }
+        .z-listitem-checkable{
+        background:none;
+        }
+
+        .z-listitem.z-listitem-selected>.z-listcell{
+        border-color:none;
+        background:none;
+        }
+
+        .z-listitem.z-listitem-selected:hover>.z-listcell{
+        border-color:none;
+        background:none;
+        }
+
+        .z-listitem.z-listitem-selected.z-listitem-focus>.z-listcell{
+        border-color:none;
+        background:none;
+        }
+
+        .z-listitem.z-listitem-selected.z-listitem-focus:hover>.z-listcell{
+        border-color:none;
+        background:none;
+
+        }
+
+        .z-listitem-focus>.z-listcell{
+            background:none;
+        }
+
+        .z-listitem-selected>.z-listcell>.z-listcell-content>.z-listitem-checkable .z-listitem-icon.z-icon-radio{
+
+            background:none;
+        }
+        .z-listitem .z-listcell{
+            cursor:text;
+            border:none;
+            background:none;
+        }
+        .z-listitem{
+            border:none;
+        background:none;
+        }
+        .z-listcell-content, .z-listgroup-content, .z-listgroupfoot-content, .z-listfooter-content{
+            cursor: text;
+            background:none;
+        }
+        .z-listitem:hover>.z-listcell>.z-listcell-content{
+            color:unset;
+        }
+        .listContactPointChosen{
+            border:none;
+        }
+
+    </style>
     <panel id="panelTelecom"
            apply="org.angelholm.composer.PanelTelecomComposer"
            width="100%"
            collapsible="true"
            open="false"
-           border="rounded">
+           border="normal">
 
         <caption >
-            <label>Контактні дані</label>
+            <label>${labels.panelTelecom.title}</label>
         </caption>
         <panelchildren>
 
+        <div sclass="wrapper">
+
+
+            <div >
+                <listbox id="listContactPointChosen"  sclass="listContactPointChosen"/>
+            </div>
             <separator height="10px"></separator>
             <div>
-                <listbox sclass="cell" id="listContactPointCandidate" rows="1" mold="select">
-
-                </listbox>
-                <button id="btnAddContactPoint">Add</button>
+                <listbox sclass="cell" id="listContactPointCandidate" rows="1" mold="select"/>
+                <button id="btnAddContactPoint">${labels.panelTelecom.btnAdd}</button>
             </div>
-            <div width="50%">
-                <listbox id="listContactPointChosen">
+        </div>
 
-                </listbox>
-            </div>
-            <separator height="10px"></separator>
 
         </panelchildren>
     </panel>

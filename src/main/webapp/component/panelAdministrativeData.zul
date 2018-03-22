@@ -1,17 +1,56 @@
 <zk>
-    <panel id="panelAdministrativeData">
-        <panelchildren>
-                    <div>
-                        <label>Стать</label>
-                        <combobox>
-                            <comboitem label="Чоловік"/>
-                            <comboitem label="Жінка"/>
-                        </combobox>
-                    </div>
+    <style>
+        .grid {
+        width: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        }
 
-                    <div>
-                        <label>Дата народження</label>
-                        <datebox></datebox>
+        .grid > div {
+        border: 2px solid #7EC6FE;
+        border-radius: 5px;
+        padding: 1em;
+        color: #149CFA;
+        background: #E8F5FF;
+        }
+        .labelvalue{
+
+        }
+        .boxvalue,.labelvalue{
+            margin: 3px;
+        }
+        .wrapper {
+            margin: 20px;
+            width: 400px;
+        }
+    </style>
+    <panel id="panelAdministrativeData"
+           sclass="panelAdministrativeData"
+           apply="org.angelholm.composer.PanelAdministrativeDataComposer"
+           border="none"
+           collapsible="true">
+        <caption>
+            <label>${labels.panelAdministrativeData.title}</label>
+        </caption>
+        <panelchildren>
+                    <div sclass="wrapper" align="center">
+                        <div sclass="grid" align="left">
+
+                                 <label sclass="labelvalue">${labels.panelAdministrativeData.labelGender}</label>
+
+                                <combobox id="lstGender" sclass="boxvalue" value="${labels.panelAdministrativeData.labelMale}">
+                                    <comboitem label="${labels.panelAdministrativeData.labelMale}" value="male"  />
+                                    <comboitem label="${labels.panelAdministrativeData.labelFemale}" value="female"/>
+                                 </combobox>
+
+                                <label sclass="labelvalue">${labels.panelAdministrativeData.labelDateOfBirth}</label>
+
+                                <datebox id="txtDateOfBirth" sclass="boxvalue"></datebox>
+
+
+
+                        </div>
                     </div>
         </panelchildren>
     </panel>

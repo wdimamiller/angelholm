@@ -1,0 +1,16 @@
+<zk>
+    <div>
+        <menubar orient="vertical">
+
+
+            <menu label="Персонал" >
+            </menu>
+            <menu label="Налаштування">
+              <!--  <menupopup>
+                    <menuitem label="Про мене"/>
+                    <menuitem label="Тому подібне"/>
+                </menupopup>-->
+            </menu>
+        </menubar>
+    </div>
+</zk>

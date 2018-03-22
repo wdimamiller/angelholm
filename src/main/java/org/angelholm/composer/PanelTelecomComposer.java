@@ -1,6 +1,5 @@
 package org.angelholm.composer;
 
-import ca.uhn.fhir.model.base.composite.BaseCodingDt;
 import org.angelholm.service.ValueSetService;
 import org.hl7.fhir.dstu3.model.*;
 import org.zkoss.util.Locales;
@@ -38,13 +37,20 @@ public class PanelTelecomComposer extends SelectorComposer<Panel> {
 
     private void init(){
 
+        //get the value set
         String strLocale = Locales.getCurrent().getLanguage() + "_" +  Locales.getCurrent().getCountry();
         ValueSetService valueSetService = new ValueSetService();
         ValueSet contactPointValueSet = valueSetService.getValueSet(strLocale, "ContactPointSystem");
 
+        //init model with data
         listModelCandidate = new ListModelList<>(contactPointValueSet.getExpansion().getContains());
         listModelChosen =  new ListModelList<>();
 
+        //add default values
+        listModelChosen.add(listModelCandidate.get(0));
+        listModelChosen.add(listModelCandidate.get(1));
+        listModelCandidate.remove(listModelChosen.get(0));
+        listModelCandidate.remove(listModelChosen.get(1));
 
     }
 
@@ -94,6 +100,7 @@ public class PanelTelecomComposer extends SelectorComposer<Panel> {
     }
 
     public void setTelecom(List<ContactPoint> telecom){
+        //TODO fill values of panels components
         this.telecom = telecom;
     }
 

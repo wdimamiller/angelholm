@@ -1,11 +1,7 @@
 package org.angelholm.composer;
 
-import org.angelholm.service.PatientService;
 import org.angelholm.service.PractitionerService;
-import org.hl7.fhir.dstu3.model.Enumerations;
-import org.hl7.fhir.dstu3.model.HumanName;
-import org.hl7.fhir.dstu3.model.Patient;
-import org.hl7.fhir.dstu3.model.Practitioner;
+import org.hl7.fhir.dstu3.model.*;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
@@ -13,7 +9,7 @@ import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.*;
 
-import java.util.Date;
+
 
 
 public class NewPractitionerComposer extends SelectorComposer <Window>{
@@ -21,17 +17,16 @@ public class NewPractitionerComposer extends SelectorComposer <Window>{
     @Wire
     Window windowNewPractitioner;
     @Wire
-    Datebox dtbDateOfBirth;
-    @Wire
     Button btnCreate;
-    @Wire
-    Button btnReset;
-    @Wire
-    Radio radioMale;
+
     @Wire("include #panelHumanName")
     Panel panelHumanName;
     @Wire("include #panelTelecom")
     Panel panelTelecom;
+    @Wire("include #panelAddress")
+    Panel panelAddress;
+    @Wire("include #panelAdministrativeData")
+    Panel panelAdministrativeData;
 
 
     PractitionerService practitionerService;
@@ -39,31 +34,35 @@ public class NewPractitionerComposer extends SelectorComposer <Window>{
     @Listen("onClick=#btnCreate")
     public void createPractitioner(){
 
+        //create Practitioner
         Practitioner practitioner = new Practitioner();
+
+        //TODO normal human identifier
         practitioner.addIdentifier().setSystem("urn:system").setValue("123456");
 
+        //human name
         HumanName name = ((PanelHumanNameComposer)  panelHumanName.getAttribute("PanelHumanNameComposer")).getHumanName();
         practitioner.addName(name);
 
+        //telecom
         practitioner.setTelecom(( (PanelTelecomComposer) panelTelecom.getAttribute("PanelTelecomComposer")).getTelecom());
 
-        practitioner.setBirthDate(new Date());
+        //administrative data
+        practitioner.setBirthDate ( ( (PanelAdministrativeDataComposer) panelAdministrativeData.getAttribute("PanelAdministrativeDataComposer")).getDateOfBirth());
+        String gender = ((PanelAdministrativeDataComposer) panelAdministrativeData.getAttribute("PanelAdministrativeDataComposer")).getGender();
+        practitioner.setGender( new Enumerations.AdministrativeGenderEnumFactory().fromCode(gender));
 
-        if(radioMale.isSelected()){
-            practitioner.setGender(Enumerations.AdministrativeGender.MALE);
-        }
-        else{
-            practitioner.setGender(Enumerations.AdministrativeGender.FEMALE);
-        }
-
+        //address
+        Address address = ((PanelAddressComposer) panelAddress.getAttribute("PanelAddressComposer")).getAddress();
+        practitioner.addAddress(address);
 
         long status  = practitionerService.createPractitioner(practitioner);
 
         if(status != 0){
-            Clients.showNotification(Labels.getLabel("windowNewPractitioner.notificationSuccessfullyCreated"),"info",btnCreate,"end_center",3000);
+            Clients.showNotification(Labels.getLabel("windowNewPatient.notificationSuccessfullyCreated"),"info",btnCreate,"end_center",3000);
         }
         else{
-            Clients.showNotification(Labels.getLabel("windowNewPractitioner.notificationUnsuccessfullyCreated"),"info",btnCreate,"end_center",3000);
+            Clients.showNotification(Labels.getLabel("windowNewPatient.notificationUnsuccessfullyCreated"),"info",btnCreate,"end_center",3000);
         }
     }
 
