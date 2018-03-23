@@ -39,14 +39,14 @@
 	<!-- 2. Spring ThreadLocalSecurityContextHolderStrategy -->
 	<!-- ====================================================== -->
 
-	<!--РОЗКОМЕНТУВАТИ У РАЗІ ДОДАВАННЯ SPRING SECURITY-->
-	<!--<preference>
+
+	<preference>
 		<name>ThreadLocal</name>
 		<value>
 			org.springframework.security.core.context.ThreadLocalSecurityContextHolderStrategy=contextHolder;
 			org.springframework.web.context.request.RequestContextHolder=requestAttributesHolder,inheritableRequestAttributesHolder;
 		</value>
-	</preference>-->
+	</preference>
 
 	<system-config>
 		<ui-factory-class>
@@ -66,5 +66,5 @@
 
 
 
-	
+
 </zk>

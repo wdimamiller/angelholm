@@ -7,8 +7,7 @@
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
      http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
-    <!--РОЗКОМЕНТУВАТИ У РАЗІ ДОДАВАННЯ SPRING SECURITY-->
-    <!--
+
     <global-method-security secured-annotations="enabled" />
 
 
@@ -20,7 +19,15 @@
         <intercept-url pattern="/index.zul" access="permitAll()" />
         <intercept-url pattern="/resources/**" access="permitAll()"/>
 
+
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/doctor/**" access="hasAnyRole('ROLE_ADMIN','ROLE_DOCTOR')" />
+        <intercept-url pattern="/manager/**" access="hasRole('ROLE_MANAGER')" />
+        <intercept-url pattern="/nurce/**" access="hasRole('ROLE_NURCE')" />
+        <intercept-url pattern="/resperson/**" access="hasRole('ROLE_RES_PERSON')" />
+        <intercept-url pattern="/accountant/**" access="hasRole('ROLE_ACCOUNTANT')" />
+        <intercept-url pattern="/lab_assistant/**" access="hasRole('ROLE_LAB_ASSISTANT')" />
+
 
         <form-login
                 login-page="/login.zul"
@@ -29,19 +36,21 @@
                 password-parameter="j_password"
         />
 
-        <logout logout-success-url="/index.zul" invalidate-session="true" />
+        <logout logout-success-url="/login.zul" invalidate-session="true" />
 
         <headers>
             <frame-options policy="SAMEORIGIN"/>
         </headers>
     </http>
 
+   <beans:bean id="UserDetailsServiceImpl" class="org.angelholm.service.UserDetailsServiceImpl" />
 
     <authentication-manager>
         <authentication-provider user-service-ref="UserDetailsServiceImpl">
-            &lt;!&ndash;<password-encoder hash="md5" />&ndash;&gt;
+           <!-- &lt;!&ndash;<password-encoder hash="md5" />&ndash;&gt;-->
         </authentication-provider>
     </authentication-manager>
-    <beans:bean id="UserDetailsServiceImpl" class="org.angelholm.service.impl.UserDetailsServiceImpl" />-->
+
+
 
 </beans:beans>

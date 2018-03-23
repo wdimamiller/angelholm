@@ -1,6 +1,6 @@
 package org.angelholm.composer;
 
-import org.angelholm.model.User;
+
 import org.angelholm.service.PatientService;
 import org.hl7.fhir.dstu3.model.HumanName;
 import org.hl7.fhir.dstu3.model.Patient;

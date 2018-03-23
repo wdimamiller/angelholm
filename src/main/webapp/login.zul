@@ -2,42 +2,42 @@
     <window id="windowLogin"
             border="normal"
             closable="true"
-            mode="popup"
-            width="350px"
-            height="300px"
-            position="center,top"
+            mode="modal"
+            width="300px"
+            height="200px"
+
             title="${labels.login.windowTitle}">
+        <style>
 
-        <style src="/resources/styles/login.css"/>
+            .btn-radius{
+                font-weight: bold;
+                width: 200px;
+                border-radius: 5px;
+                margin: 5px;
+            }
+            .textarea{
+                font-weight: bold;
+                margin: 5px;
+                border-radius: 5px;
+                width: 200px;
+            }
+        </style>
 
-        <html:form action="j_spring_security_check" method="POST"
-                   xmlns:html="native">
+        <html:form action="j_spring_security_check" method="POST" xmlns:html="native">
 
-            <div align="center" width="100%">
-            <div sclass="grid" >
-                <div sclass="cell" >
-                    <label >${labels.login.labelUsername}</label>
-                </div>
-                <div sclass="cell">
-                    <textbox  id="txtUsername" name="j_username" sclass="textarea"/>
-                </div>
-                <div sclass="cell" >
-                    <label>${labels.login.labelPassword}</label>
-                </div>
-                <div sclass="cell">
-                    <textbox id="txtPassword" type="password" name="j_password" sclass="textarea"/>
-                </div>
-                <div sclass="cell">
-                    <separator height="10px"></separator>
-                    <div align="center" >
-                        <button type="submit" label="${labels.login.buttonSubmit}" sclass="btn-radius"/>
-                        <button type="reset" label="${labels.login.buttonReset}" sclass="btn-radius"/>
-                    </div>
-                </div>
-            </div>
-            </div>
 
-        </html:form>
+
+        <vbox align="center" pack="center" height="70%" width="100%">
+            <textbox id="txtUsername" name="j_username" sclass="textarea" placeholder="${labels.login.labelUsername}"/>
+            <textbox id="txtPassword" type="password" name="j_password" sclass="textarea" placeholder="${labels.login.labelPassword}"/>
+            <button type="submit" label="${labels.login.buttonSubmit}" sclass="btn-radius"/>
+        </vbox>
+        <a>Відновити пароль</a>
+
+
+
+
+       </html:form>
     </window>
 
 </zk>

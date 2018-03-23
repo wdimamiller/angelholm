@@ -75,8 +75,10 @@
     <menupopup id="popupUser" width="200px">
         <menuitem label="${labels.panelUser.menuSettings}" iconSclass="z-icon-cog"/>
         <menuitem label="${labels.panelUser.menuProfile}" iconSclass="z-icon-user"/>
+        <menuitem label="Themes"/>
+        <menuitem label="Manual"/>
         <menuseparator/>
-        <menuitem label="${labels.panelUser.menuLogout}" iconSclass="z-icon-off"/>
+        <menuitem label="${labels.panelUser.menuLogout}" iconSclass="z-icon-off" onClick="Executions.sendRedirect(&quot;/logout&quot;)"/>
     </menupopup>
 </zk>
 

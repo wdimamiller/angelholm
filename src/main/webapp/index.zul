@@ -1,51 +1,42 @@
-
 <zk >
+    <style>
+        .wrapper{
+        padding: 5px 20px 5px 20px;
+        }
+        .btnLogin{
+        padding: 0px 20px 0px 20px;
+        font-weight: bold;
+        }
+    </style>
+    <div apply="org.angelholm.composer.IndexComposer">
 
 
 
-    <div sclass="div-wrapper" apply="org.angelholm.composer.IndexComposer">
-            <div  sclass="div-header">
+        <div id="panelIndexHeader" sclass="z-menubar wrapper" align="right" height="50px">
+            <button id="btnLogin"
+                    sclass="btnLogin"
+                    iconSclass="z-icon-sign-in"
+                    height="100%"
+                    dir="reverse"
+            >
+                ${labels.panelIndexHeader.btnLogin}
+            </button>
+        </div>
 
-                <include src="/component/panelUser.zul"></include>
+        <div>
+            <label value="Theme" />
+            <separator></separator>
+            <combobox id="comboTheme">
 
-                <separator height="20px"></separator>
-                <div>
-                    <button id="btnListPatient" sclass="btn-radius btn-right">Список пацієнтів</button>
-                    <button id="btnNewPatient" sclass="btn-radius btn-right">Створити пацієнта</button>
-                    <button id="btnTest" sclass="btn-radius btn-right">Test</button>
-                    <button id="btnOpenCalendar" sclass="btn-radius btn-right" href="calendar/calendar.zul">Календар</button>
-                    <button id="btnLogin" sclass="btn-radius btn-right" >${labels.index.buttonLogin}</button>
-                    <button id="btnManual" sclass="btn-radius btn-right">${labels.index.buttonManual}</button>
-                </div>
+                <comboitem label="atlantic" />
+                <comboitem label="breeze" />
+                <comboitem label="sapphire" />
+                <comboitem label="silvertail" />
+                <comboitem label="amelia" />
+                <comboitem label="cyborg" />
 
-                <separator></separator>
-                <separator></separator>
-                <separator></separator>
-
-                <div>
-                    <label value="Theme" />
-                    <separator></separator>
-                    <combobox id="comboTheme">
-
-                        <comboitem label="atlantic" />
-                        <comboitem label="breeze" />
-                        <comboitem label="sapphire" />
-                        <comboitem label="silvertail" />
-                        <comboitem label="amelia" />
-                        <comboitem label="cyborg" />
-
-                    </combobox>
-                </div>
-
-            </div>
-
-            <div sclass="div-center">
-
-            </div>
-
+            </combobox>
+        </div>
     </div>
-
-
-
 
 </zk>
