@@ -5,7 +5,7 @@
             mode="modal"
             width="300px"
             height="200px"
-
+            apply="org.angelholm.composer.WindowLoginComposer"
             title="${labels.login.windowTitle}">
         <style>
 
@@ -25,17 +25,12 @@
 
         <html:form action="j_spring_security_check" method="POST" xmlns:html="native">
 
-
-
-        <vbox align="center" pack="center" height="70%" width="100%">
-            <textbox id="txtUsername" name="j_username" sclass="textarea" placeholder="${labels.login.labelUsername}"/>
-            <textbox id="txtPassword" type="password" name="j_password" sclass="textarea" placeholder="${labels.login.labelPassword}"/>
-            <button type="submit" label="${labels.login.buttonSubmit}" sclass="btn-radius"/>
-        </vbox>
-        <a>Відновити пароль</a>
-
-
-
+            <vbox align="center" pack="center" height="70%" width="100%">
+                <textbox id="txtUsername" name="j_username" sclass="textarea" placeholder="${labels.login.labelUsername}" />
+                <textbox id="txtPassword" type="password" name="j_password" sclass="textarea" placeholder="${labels.login.labelPassword}" />
+                <button type="submit" label="${labels.login.buttonSubmit}" sclass="btn-radius" id="btnSubmit"/>
+                <a>${labels.login.labelRestorePassword}</a>
+            </vbox>
 
        </html:form>
     </window>

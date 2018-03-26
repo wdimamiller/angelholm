@@ -13,11 +13,11 @@
     <borderlayout width="100%">
 
         <north sclass="header">
-            <include src="/component/panelUser.zul"></include>
+            <include src="/zul/component/panelUser.zul"></include>
         </north>
 
         <west width="250px" collapsible="true" title="Панель управління" sclass="sidebar">
-            <include src="/templates/sidebar.zul"></include>
+          
         </west>
 
         <center style="margin:10px;" autoscroll="true" sclass="content">

@@ -56,7 +56,7 @@
 
 	<library-property>
 		<name>org.zkoss.theme.preferred</name>
-		<value>atlantic</value>
+		<value>sapphire</value>
 	</library-property>
 
 	<session-config>
