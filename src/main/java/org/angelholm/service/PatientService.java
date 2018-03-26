@@ -16,6 +16,7 @@ import org.hl7.fhir.exceptions.FHIRException;
 import org.zkoss.zhtml.Code;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PatientService {
 
@@ -29,16 +30,14 @@ public class PatientService {
         Bundle results = client
                 .search()
                 .forResource(Patient.class)
-                .count(20)
+                .count(50)
                 .returnBundle(Bundle.class)
                 .sort().ascending(Patient.FAMILY)
                 .execute();
 
         for (Bundle.BundleEntryComponent entry : results.getEntry()) {
             listPatients.add((Patient) entry.getResource());
-            //System.out.println((Patient) entry.getResource());
         }
-
 
         return listPatients;
     }

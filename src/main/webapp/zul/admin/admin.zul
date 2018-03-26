@@ -18,9 +18,10 @@
 
 		<west width="250px" collapsible="true" title="Панель управління" sclass="sidebar">
 			<div>
-				<menubar orient="vertical">
+
+				<!--<menubar orient="vertical">
 					<menu label="Персонал" />
-				</menubar>
+				</menubar>-->
 			</div>
 		</west>
 

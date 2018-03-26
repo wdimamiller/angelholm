@@ -2,6 +2,9 @@ package org.angelholm.service;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
 import org.hl7.fhir.dstu3.model.*;
 
+
+import java.util.ArrayList;
+
 public class PractitionerService {
 
     IGenericClient client = FhirGenericClientService.getInstance();
@@ -36,6 +39,23 @@ public class PractitionerService {
         return practitioner;
     }
 
+    public ArrayList<Practitioner> getListPractitioner(){
+
+        ArrayList<Practitioner> listPractitioners = null;
+
+        Bundle result =  client.search().forResource(Practitioner.class)
+                .returnBundle(Bundle.class)
+                .execute();
+
+        Practitioner[] a = (Practitioner[]) result.getEntry().toArray();
+
+        for(int i = 0; i < a.length; i++){
+            System.out.println( a[i].getName().get(0).getFamily());
+        }
+
+
+        return listPractitioners;
+    }
 
     public int createPractitioner( Practitioner practitioner){
 

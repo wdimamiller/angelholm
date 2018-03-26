@@ -1,11 +1,9 @@
 package org.angelholm.composer;
 
+import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Wire;
-import org.zkoss.zul.Combobox;
-import org.zkoss.zul.Comboitem;
-import org.zkoss.zul.Datebox;
-import org.zkoss.zul.Panel;
+import org.zkoss.zul.*;
 
 import java.util.Date;
 
@@ -25,6 +23,8 @@ public class PanelAdministrativeDataComposer extends SelectorComposer<Panel>{
         super.doAfterCompose(comp);
 
         comp.setAttribute("PanelAdministrativeDataComposer", this);
+        lstGender.setValue("male");
+        lstGender.setText(Labels.getLabel("panelAdministrativeData.labelMale"));
     }
 
     public void setDateOfBirth(Date dateOfBirth) {

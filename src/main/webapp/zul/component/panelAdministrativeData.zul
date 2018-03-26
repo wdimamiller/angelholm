@@ -39,7 +39,7 @@
 
                                  <label sclass="labelvalue">${labels.panelAdministrativeData.labelGender}</label>
 
-                                <combobox id="lstGender" sclass="boxvalue" value="${labels.panelAdministrativeData.labelMale}">
+                                <combobox id="lstGender" sclass="boxvalue" value="male" >
                                     <comboitem label="${labels.panelAdministrativeData.labelMale}" value="male"  />
                                     <comboitem label="${labels.panelAdministrativeData.labelFemale}" value="female"/>
                                  </combobox>

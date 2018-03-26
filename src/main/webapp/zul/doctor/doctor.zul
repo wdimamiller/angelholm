@@ -17,7 +17,10 @@
         </north>
 
         <west width="250px" collapsible="true" title="Панель управління" sclass="sidebar">
-          
+            <menubar>
+                <menuitem style="margin:0px;" height="20px" width="100%" label="Пацієнти"></menuitem>
+                <menuitem style="margin:0px;" width="100%" label="Календар"></menuitem>
+            </menubar>
         </west>
 
         <center style="margin:10px;" autoscroll="true" sclass="content">

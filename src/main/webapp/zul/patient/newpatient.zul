@@ -16,18 +16,18 @@
                 <n:form>
 
                     <div align="center" width="100%" >
-                        <include src="/component/panelHumanName.zul"></include>
+                        <include src="/zul/component/panelHumanName.zul"></include>
                     </div>
 
                     <div align="center" width="100%">
-                        <include src="/component/panelAdministrativeData.zul"></include>
+                        <include src="/zul/component/panelAdministrativeData.zul"></include>
                     </div>
 
                     <div align="center" width="100%">
-                                <include src="/component/panelTelecom.zul"></include>
+                                <include src="/zul/component/panelTelecom.zul"></include>
                     </div>
                     <div align="center" width="100%">
-                        <include src="/component/panelAddress.zul"></include>
+                        <include src="/zul/component/panelAddress.zul"></include>
                     </div>
 
                 </n:form>

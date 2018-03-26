@@ -2,15 +2,7 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/org/angelholm/security/config/SecurityConfig.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/org/angelholm/security/config/WebAppConfig.java</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring-security.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/mvc-servlet.xml</file>
-        </fileset>
-      </configuration>
+      <configuration />
     </facet>
     <facet type="web" name="Web">
       <configuration>
@@ -20,16 +12,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
-      </configuration>
-    </facet>
-    <facet type="hibernate" name="Hibernate">
-      <configuration>
-        <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="3ea6458a-0240-4507-817a-06f8e7170ac8" />
-          <unit-entry name="noname-applicationContext.xml@587" value="dd209482-e415-4e58-b204-fef1818a0f17" />
-        </datasource-map>
-        <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
       </configuration>
     </facet>
   </component>
