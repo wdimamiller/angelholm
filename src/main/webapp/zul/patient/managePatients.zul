@@ -1,18 +1,43 @@
 <zk>
     <window  apply="org.angelholm.composer.ListPatientComposer">
 
-        <style src="/resources/styles/listpatient.css"/>
-        <style>
-            .z-row-background-color-on-select,
-            .z-row-background-color-on-select > .z-row-inner,
-            .z-row-background-color-on-select > .z-cell {
-            background-color: #CCC !important;
-            }
-        </style>
+        <groupbox>
+            <caption>
+                <label>Пошук</label>
+            </caption>
+            <vbox>
+                <hbox>
+                    <textbox id="identifier" placeholder="id"/>
+                </hbox>
+                <hbox>
+                    <textbox id="txtLastName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnLastNameTitle}"/>
+                    <textbox id="txtFirstName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnFirstNameTitle}"/>
+                    <textbox id="txtSecondName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnSecondNameTitle}"/>
+                </hbox>
+                <hbox>
+                    <datebox id="dateFrom" placeholder="З дати"/>
+                    <datebox id="dateTo" placeholder="По дату"/>
+                </hbox>
+                <hbox>
+                    <label sclass="labelvalue">${labels.panelAdministrativeData.labelGender}</label>
 
+                    <combobox id="lstGender" sclass="boxvalue" value="male" placeholder="Стать">
+                        <comboitem label="${labels.panelAdministrativeData.labelMale}" value="male"  />
+                        <comboitem label="${labels.panelAdministrativeData.labelFemale}" value="female"/>
+                    </combobox>
+
+                    <label sclass="labelvalue">${labels.panelAdministrativeData.labelDateOfBirth}</label>
+
+                    <datebox id="txtDateOfBirth" sclass="boxvalue"></datebox>
+                </hbox>
+
+            </vbox>
+        </groupbox>
+        <separator height="15px"></separator>
+        <button id="btnSearch">${labels.listPatient.buttonSearch}</button>
         <div id="listPatientContent" width="100%" align="center">
 
-            <div id="editPanel" style="padding : 20px;" width="80%">
+            <!--<div id="editPanel" style="padding : 20px;" width="80%">
                 <groupbox open="false">
                     <caption>${labels.listPatient.groupBoxEditTitle}</caption>
                     <div >
@@ -44,39 +69,11 @@
                     </div>
                 </groupbox>
             </div>
-            <div id="filterPanel" width="80%" style="padding : 20px;">
-                <groupbox open="false">
-                    <caption>${labels.listPatient.groupBoxFilterTitle}</caption>
-                    <div >
-                        <div sclass="cell" >
-                            <label >${labels.listPatient.gridColumnLastNameTitle}</label>
-                        </div>
-                        <div sclass="cell">
-                            <textbox  id="" name="" sclass="textarea"/>
-                        </div>
+-->
 
-                        <div sclass="cell" >
-                            <label>${labels.listPatient.gridColumnFirstNameTitle}</label>
-                        </div>
-                        <div sclass="cell">
-                            <textbox id="" name="" sclass="textarea"/>
-                        </div>
-                        <div sclass="cell" >
-                            <label>${labels.listPatient.gridColumnSecondNameTitle}</label>
-                        </div>
-                        <div sclass="cell">
-                            <textbox id="" name="" sclass="textarea"/>
-                        </div>
-                        <div sclass="cell" >
-                            <button type="submit" sclass="btn-radius">${labels.listPatient.buttonSearch}</button>
-                        </div>
-                    </div>
-                </groupbox>
-
-            </div>
             <div id="gridP" width="80%"   >
 
-                <grid id="gridPatients"  >
+                <grid id="gridPatients"  mold="paging" pageSize="10" >
                     <auxhead>
                         <auxheader colspan="5">${labels.listPatient.gridTitle}</auxheader>
                     </auxhead>

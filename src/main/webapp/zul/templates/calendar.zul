@@ -1,9 +1,9 @@
 <zk xmlns="http://www.zkoss.org/2005/zul" >
-    <!--<window  apply="org.angelholm.composer.CalendarComposer">
-        &lt;!&ndash; Calendars Body &ndash;&gt;
+    <window  apply="org.angelholm.composer.CalendarComposer">
+        <!-- Calendars Body -->
         <div>
-            &lt;!&ndash; Control Menu &ndash;&gt;
-            &lt;!&ndash;<hlayout sclass="z-valign-middle">
+            <!-- Control Menu -->
+            <hlayout sclass="z-valign-middle">
                 <button id="today" label="Today" />
                 <button id="prev" />
                 <button id="next" image="/widgets/zk_calendar/zk_calendar/img/arrow.png"/>
@@ -16,32 +16,12 @@
                 <textbox id="filter"/>
                 <button id="applyFilter" label="Apply"/>
                 <button id="resetFilter" label="Reset"/>
-            </hlayout>&ndash;&gt;
+            </hlayout>
             <separator bar="true" height="20px"/>
             <calendars />
         </div>
-    </window>-->
-    <div>
-        <navbar id="navbar" orient="vertical" collapsed="false"
-                onSelect="">
+    </window>
 
-            <nav label="ZK's Pizza" iconSclass="z-icon-home"
-                 children=""/>
-
-            <nav label="Customers" iconSclass="z-icon-group"
-                 children=""/>
-
-            <nav label="Orders" iconSclass="z-icon-truck"
-                 children=""/>
-
-            <nav label="Fan Service" iconSclass="z-icon-star"
-                 children=""/>
-
-            <template name="navitem" var="navigationPage">
-                <navitem label="gggg" selected=""/>
-            </template>
-        </navbar>
-    </div>
-    <calendars id="calendars" firstDayOfWeek="Sunday" height="600px"
-               timeZone="Main=GMT+0"/>
+    <!--<calendars id="calendars" firstDayOfWeek="Sunday" height="600px"
+               timeZone="Main=GMT+0"/>-->
 </zk>

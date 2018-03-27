@@ -1,10 +1,10 @@
 package org.angelholm.composer;
 
 
+import ca.uhn.fhir.model.api.IQueryParameterType;
+import ca.uhn.fhir.model.primitive.StringDt;
 import org.angelholm.service.PatientService;
-import org.hl7.fhir.dstu3.model.HumanName;
 import org.hl7.fhir.dstu3.model.Patient;
-import org.hl7.fhir.dstu3.model.StringType;
 import org.zkoss.bind.annotation.AfterCompose;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
@@ -18,8 +18,16 @@ import org.zkoss.zul.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListPatientComposer extends SelectorComposer {
+
+    @Wire
+    Textbox txtFirstName;
+    @Wire
+    Textbox txtLastName;
+    @Wire
+    Textbox txtSecondName;
 
     @Wire
     Grid gridPatients;
@@ -31,21 +39,35 @@ public class ListPatientComposer extends SelectorComposer {
     Textbox editSecondName;
     @Wire
     Button btnEdit;
+    @Wire
+    Button btnSearch;
+
+    @Wire("include #panelPatientFilter")
+    Panel panelPatientFilter;
+
 
     ArrayList<Patient> listPatients;
     Patient selectedPatient;
     PatientService patientService;
+    List<IQueryParameterType> listQueryParameterTypes;
 
 
     @AfterCompose
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
 
-        patientService = new PatientService();
 
-        fillGrig();
+        init();
         addEvents();
 
+    }
+
+    private void init(){
+
+        listQueryParameterTypes = new ArrayList<>();
+        patientService = new PatientService();
+        listPatients = patientService.getListPatiens();
+        fillGrig();
 
     }
 
@@ -56,6 +78,21 @@ public class ListPatientComposer extends SelectorComposer {
         selectedPatient.getName().get(0).getGiven().get(1).setValue(editSecondName.getValue());
 
         patientService.updatePatient(selectedPatient);
+        fillGrig();
+    }
+
+    @Listen("onClick=#btnSearch")
+    public void searchPatient(){
+
+        listQueryParameterTypes.clear();
+
+        StringDt stringDt = new StringDt();
+        stringDt.setValue(txtLastName.getValue());
+
+        listQueryParameterTypes.add(stringDt);
+
+
+        listPatients = patientService.getListPatient(listQueryParameterTypes);
         fillGrig();
     }
 
@@ -86,10 +123,8 @@ public class ListPatientComposer extends SelectorComposer {
     }
 
     public void fillGrig(){
-        listPatients = patientService.getListPatiens();
 
         ListModelList<Patient> gridListModel = new ListModelList<>(listPatients);
-
         gridPatients.setModel(gridListModel);
 
         gridPatients.setRowRenderer((RowRenderer) (row, data, index) -> {

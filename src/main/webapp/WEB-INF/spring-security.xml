@@ -8,6 +8,7 @@
      http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
 
+
     <global-method-security secured-annotations="enabled" />
     <beans:bean id="SecurityHandler" class="org.angelholm.controller.SecurityHandler" />
 

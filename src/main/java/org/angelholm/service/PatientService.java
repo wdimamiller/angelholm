@@ -2,12 +2,19 @@ package org.angelholm.service;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.FhirVersionEnum;
+import ca.uhn.fhir.model.api.IQueryParameterAnd;
+import ca.uhn.fhir.model.api.IQueryParameterType;
+import ca.uhn.fhir.model.base.composite.BaseHumanNameDt;
+import ca.uhn.fhir.model.primitive.StringDt;
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
 
 
+import ca.uhn.fhir.rest.gclient.ICriterion;
 import ca.uhn.fhir.rest.gclient.IParam;
+import ca.uhn.fhir.rest.gclient.TokenClientParam;
+import ca.uhn.fhir.rest.param.DateParam;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.codesystems.Appointmentstatus;
 import org.hl7.fhir.dstu3.model.codesystems.OrganizationType;
@@ -15,8 +22,7 @@ import org.hl7.fhir.dstu3.model.codesystems.OrganizationTypeEnumFactory;
 import org.hl7.fhir.exceptions.FHIRException;
 import org.zkoss.zhtml.Code;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class PatientService {
 
@@ -41,6 +47,35 @@ public class PatientService {
 
         return listPatients;
     }
+
+    public ArrayList<Patient> getListPatient( List<IQueryParameterType> listParameter){
+        ArrayList<Patient> listPatients = new ArrayList<>();
+
+
+        Map<String, List<IQueryParameterType>> map = new HashMap<>();
+
+
+        //List<IQueryParameterType> listParameter = new ArrayList<>();
+
+
+
+        map.put("name", listParameter);
+        Bundle results = client
+                .search()
+                .forResource(Patient.class)
+                .where(map)
+                .count(50)
+                .returnBundle(Bundle.class)
+                .sort().ascending(Patient.FAMILY)
+                .execute();
+
+        for (Bundle.BundleEntryComponent entry : results.getEntry()) {
+            listPatients.add((Patient) entry.getResource());
+        }
+
+        return listPatients;
+    }
+
 
     public int deletePatient(Patient patient){
 

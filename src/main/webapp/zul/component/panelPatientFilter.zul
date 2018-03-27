@@ -1,0 +1,38 @@
+<zk>
+    <panel  id="panelPatientFilter"
+            sclass="panelPatientFilter"
+            apply="org.angelholm.composer.PanelPatientFilterComposer">
+        <panelchildren>
+            <groupbox>
+                <caption>
+                    <label>Пошук</label>
+                </caption>
+                <vbox>
+                    <hbox>
+                        <textbox id="txtLastName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnLastNameTitle}"/>
+                        <textbox id="txtFirstName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnFirstNameTitle}"/>
+                        <textbox id="txtSecondName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnSecondNameTitle}"/>
+                    </hbox>
+                    <hbox>
+                        <datebox id="dateFrom" placeholder="З дати"/>
+                        <datebox id="dateTo" placeholder="По дату"/>
+                        <textbox id="identifier" placeholder="id"/>
+                    </hbox>
+                    <hbox>
+                        <label sclass="labelvalue">${labels.panelAdministrativeData.labelGender}</label>
+
+                        <combobox id="lstGender" sclass="boxvalue" value="male" placeholder="Стать">
+                            <comboitem label="${labels.panelAdministrativeData.labelMale}" value="male"  />
+                            <comboitem label="${labels.panelAdministrativeData.labelFemale}" value="female"/>
+                        </combobox>
+
+                        <label sclass="labelvalue">${labels.panelAdministrativeData.labelDateOfBirth}</label>
+
+                        <datebox id="txtDateOfBirth" sclass="boxvalue"></datebox>
+                    </hbox>
+
+                </vbox>
+            </groupbox>
+        </panelchildren>
+    </panel>
+</zk>

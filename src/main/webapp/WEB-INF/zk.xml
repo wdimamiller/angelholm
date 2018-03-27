@@ -2,43 +2,17 @@
 
 <zk>
 
-
 	<preference>
 		<name>org.zkoss.zk.ui.WebApp.name</name>
 		<value>ANGELHOLM</value>
 	</preference>
 
-	<!--
-	<language-config>
-		<addon-uri>/ZKAddon.xml</addon-uri>
-	</language-config>
-	-->
-	<!--
-	<desktop-config>
-		<theme-provider-class>org.angelholm.zkoss.MyThemeProvider
-		</theme-provider-class>
-	</desktop-config>
-	-->
-
-	<!-- ====================================================== -->
-	<!-- Listener to make sure servlet thread -->
-	<!-- and ZK event thread got the same -->
-	<!-- ThreadLocal values. -->
-	<!-- ====================================================== -->
 	<listener>
 		<description>ThreadLocal Synchronization Listener
 		</description>
 		<listener-class>org.zkoss.zkplus.util.ThreadLocalListener
 		</listener-class>
 	</listener>
-
-	<!-- ====================================================== -->
-	<!-- Besides that, you have to specify what -->
-	<!-- ThreadLocal variables you want to sync. -->
-	<!-- 1. Spring RequestContextHolder -->
-	<!-- 2. Spring ThreadLocalSecurityContextHolderStrategy -->
-	<!-- ====================================================== -->
-
 
 	<preference>
 		<name>ThreadLocal</name>
@@ -63,8 +37,5 @@
 		<max-desktops-per-session>10</max-desktops-per-session>
 		<timer-keep-alive>true</timer-keep-alive>
 	</session-config>
-
-
-
 
 </zk>

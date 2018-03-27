@@ -51,7 +51,9 @@
             <borderlayout height="50px" style=" margin: 0px;padding: 0px ;" sclass="z-menubar">
                     <west border="none" style=" margin-left: 0px;padding: 0px;">
                         <button id="btnUserHome" sclass="btnUserHome z-menubar" iconSclass="z-icon-home"
-                                height="100%" >${labels.panelUser.btnHomeTitle}</button>
+                                height="100%"
+                                onClick="Executions.sendRedirect(&quot;/index.zul&quot;)"
+                                >${labels.panelUser.btnHomeTitle}</button>
 
                     </west>
                     <east border="none">

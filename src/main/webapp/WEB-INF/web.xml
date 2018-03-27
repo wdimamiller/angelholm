@@ -7,8 +7,9 @@
 	<description><![CDATA[ANGELHOLM ERP APPLICATION]]></description>
 	<display-name>angelholm</display-name>
 
+	<!--РОЗКОМЕНТУВАТИ У РАЗІ ДОДАВАННЯ SPRING SECURITY-->
 
-	<context-param>
+	<!--<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/applicationContext.xml
@@ -34,7 +35,7 @@
 	<listener>
 		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
 	</listener>
-
+-->
 	<!-- ZK -->
 	<servlet>
 		<servlet-name>dspLoader</servlet-name>
