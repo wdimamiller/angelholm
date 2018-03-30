@@ -15,6 +15,7 @@ import ca.uhn.fhir.rest.gclient.ICriterion;
 import ca.uhn.fhir.rest.gclient.IParam;
 import ca.uhn.fhir.rest.gclient.TokenClientParam;
 import ca.uhn.fhir.rest.param.DateParam;
+import ca.uhn.fhir.rest.param.DateRangeParam;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.codesystems.Appointmentstatus;
 import org.hl7.fhir.dstu3.model.codesystems.OrganizationType;
@@ -48,6 +49,36 @@ public class PatientService {
         return listPatients;
     }
 
+    public ArrayList<Patient> getListPatients(String lastName, String firstName, String secondName , Date dateFrom, Date dateTo, Date dateBirth, String identifier, String gender){
+
+        ArrayList<Patient> listPatients = new ArrayList<>();
+
+        DateRangeParam rangeParam = new DateRangeParam();
+        rangeParam.setRangeFromDatesInclusive(dateFrom, dateTo);
+
+
+        Bundle results = client
+                .search()
+                .forResource(Patient.class)
+                .where(Patient.FAMILY.matches().value(lastName))
+                .and(Patient.GIVEN.matches().values(firstName,secondName))
+                .and(Patient.BIRTHDATE.exactly().day(dateBirth))
+                .and(Patient.GENDER.exactly().code(gender))
+                .lastUpdated(rangeParam)
+                .count(50)
+                .returnBundle(Bundle.class)
+                .sort().ascending(Patient.FAMILY)
+                .execute();
+
+        for (Bundle.BundleEntryComponent entry : results.getEntry()) {
+            listPatients.add((Patient) entry.getResource());
+        }
+
+        return listPatients;
+
+    }
+
+
     public ArrayList<Patient> getListPatient( List<IQueryParameterType> listParameter){
         ArrayList<Patient> listPatients = new ArrayList<>();
 
@@ -56,8 +87,6 @@ public class PatientService {
 
 
         //List<IQueryParameterType> listParameter = new ArrayList<>();
-
-
 
         map.put("name", listParameter);
         Bundle results = client

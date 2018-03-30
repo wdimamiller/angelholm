@@ -5,14 +5,15 @@
             <caption>
                 <label>Пошук</label>
             </caption>
+
             <vbox>
                 <hbox>
-                    <textbox id="identifier" placeholder="id"/>
+                    <textbox id="identifier"/>
                 </hbox>
                 <hbox>
-                    <textbox id="txtLastName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnLastNameTitle}"/>
-                    <textbox id="txtFirstName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnFirstNameTitle}"/>
-                    <textbox id="txtSecondName" name="" sclass="textarea" placeholder="${labels.listPatient.gridColumnSecondNameTitle}"/>
+                    <textbox id="txtLastName" name="" sclass="textarea" placeholder="${labels.panelHumanName.labelLastName}"/>
+                    <textbox id="txtFirstName" name="" sclass="textarea" placeholder="${labels.panelHumanName.labelFirstName}"/>
+                    <textbox id="txtSecondName" name="" sclass="textarea" placeholder="${labels.panelHumanName.labelSecondName}"/>
                 </hbox>
                 <hbox>
                     <datebox id="dateFrom" placeholder="З дати"/>
@@ -21,20 +22,27 @@
                 <hbox>
                     <label sclass="labelvalue">${labels.panelAdministrativeData.labelGender}</label>
 
-                    <combobox id="lstGender" sclass="boxvalue" value="male" placeholder="Стать">
+                    <combobox id="lstGender" sclass="boxvalue">
                         <comboitem label="${labels.panelAdministrativeData.labelMale}" value="male"  />
                         <comboitem label="${labels.panelAdministrativeData.labelFemale}" value="female"/>
                     </combobox>
 
                     <label sclass="labelvalue">${labels.panelAdministrativeData.labelDateOfBirth}</label>
 
-                    <datebox id="txtDateOfBirth" sclass="boxvalue"></datebox>
+                    <datebox id="dateBirth" sclass="boxvalue"></datebox>
+                </hbox>
+                <hbox>
+                    <button id="btnClearFilter" label="Очистити фільтр"/>
                 </hbox>
 
             </vbox>
+
         </groupbox>
+
         <separator height="15px"></separator>
+
         <button id="btnSearch">${labels.listPatient.buttonSearch}</button>
+
         <div id="listPatientContent" width="100%" align="center">
 
             <!--<div id="editPanel" style="padding : 20px;" width="80%">
@@ -75,19 +83,19 @@
 
                 <grid id="gridPatients"  mold="paging" pageSize="10" >
                     <auxhead>
-                        <auxheader colspan="5">${labels.listPatient.gridTitle}</auxheader>
+                        <auxheader colspan="4">Пацієнти</auxheader>
                     </auxhead>
                     <columns>
-                        <column label="${labels.listPatient.gridColumnLastNameTitle}" align="center" id="colLastName"/>
-                        <column label="${labels.listPatient.gridColumnFirstNameTitle}" align="center" id="colFrstName"/>
-                        <column label="${labels.listPatient.gridColumnSecondNameTitle}" align="center"/>
-                        <column label="${labels.listPatient.gridColumnDateBirthTitle}" align="center" id="colDOB"/>
-                        <column label="${labels.listPatient.gridColumnGenderTitle}" align="center" />
+                        <column label="${labels.panelHumanName.labelLastName}" align="center" id="colLastName"/>
+                        <column label="${labels.panelHumanName.labelFirstName}" align="center" id="colFrstName"/>
+                        <column label="${labels.panelHumanName.labelSecondName}" align="center"/>
+                        <column label="${labels.panelAdministrativeData.labelDateOfBirth}" align="center" id="colDOB"/>
                     </columns>
                 </grid>
 
             </div>
         </div>
+
     </window>
 
 </zk>

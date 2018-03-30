@@ -28,6 +28,17 @@ public class ListPatientComposer extends SelectorComposer {
     Textbox txtLastName;
     @Wire
     Textbox txtSecondName;
+    @Wire
+    Datebox dateFrom;
+    @Wire
+    Datebox dateTo;
+    @Wire
+    Datebox dateBirth;
+    @Wire
+    Combobox lstGender;
+    @Wire
+    Button btnClearFilter;
+
 
     @Wire
     Grid gridPatients;
@@ -70,6 +81,16 @@ public class ListPatientComposer extends SelectorComposer {
         fillGrig();
 
     }
+    @Listen("onClick=#btnClearFilter")
+    public void clearFilter(){
+        txtFirstName.setValue(null);
+        txtLastName.setValue(null);
+        txtSecondName.setValue(null);
+        dateFrom.setValue(null);
+        dateTo.setValue(null);
+        dateBirth.setValue(null);
+        lstGender.setSelectedItem(null);
+    }
 
     @Listen("onClick=#btnEdit")
     public void updatePatient(){
@@ -84,15 +105,21 @@ public class ListPatientComposer extends SelectorComposer {
     @Listen("onClick=#btnSearch")
     public void searchPatient(){
 
-        listQueryParameterTypes.clear();
+        String gender = "";
+        if(lstGender.getSelectedItem()!=null){
+            gender = lstGender.getSelectedItem().getValue();
+        }
 
-        StringDt stringDt = new StringDt();
-        stringDt.setValue(txtLastName.getValue());
+        listPatients = patientService.getListPatients(  txtLastName.getValue(),
+                                                        txtFirstName.getValue(),
+                                                        txtSecondName.getValue(),
+                                                        dateFrom.getValue(),
+                                                        dateTo.getValue(),
+                                                        dateBirth.getValue(),
+                                                        null,
+                                                        gender
+                                                            );
 
-        listQueryParameterTypes.add(stringDt);
-
-
-        listPatients = patientService.getListPatient(listQueryParameterTypes);
         fillGrig();
     }
 
@@ -136,7 +163,6 @@ public class ListPatientComposer extends SelectorComposer {
             row.appendChild(new Label(patient.getName().get(0).getGiven().get(1).toString()));
             DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
             row.appendChild(new Label(df.format(patient.getBirthDate())));
-            row.appendChild(new Label(patient.getGender().name()));
 
         });
     }
